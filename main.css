@@ -29,6 +29,7 @@ header {
   background-size: cover;
   background-position: center;
   padding: 150px; /* Moved padding from HTML */
+  animation: fadeIn 0.5s ease-in; /* Add animation to header */
 }
 
 header h1 {
@@ -54,6 +55,35 @@ header p {
   margin: 0 auto; /* Center the paragraph */
   max-width: 1000px; /* Set a maximum width for the paragraph */
   text-align: center; /* Justify the text */
+}
+
+/* Add this new animation for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+@media (max-width: 768px) { /* Adjust styles for mobile devices */
+  header {
+    padding: 100px; /* Reduce padding for smaller screens */
+  }
+
+  header h1 {
+    font-size: 40px; /* Decrease font size for the title */
+  }
+
+  header p {
+    font-size: 18px; /* Decrease font size for the paragraph */
+    margin-bottom: 20px; /* Reduce margin for the paragraph */
+  }
+
+  .header-description {
+    max-width: 90%; /* Allow more width on smaller screens */
+  }
 }
 /* #endregion */
 

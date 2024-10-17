@@ -1,6 +1,6 @@
 const reposContainer = document.getElementById('repos');
 const loadMoreButton = document.getElementById('loadMore');
-const loader = document.getElementById('loader');
+const loader = document.getElementById('dots');
 
 let currentPage = 1;
 const repoWidth = 380; // Adjust this value based on the actual width of each repo item

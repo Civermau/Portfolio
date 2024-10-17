@@ -1,0 +1,67 @@
+/* #region General Styles */
+html {
+  overflow: -moz-scrollbars-none; 
+  scrollbar-width: none; 
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', sans-serif; 
+  color: #333;
+  
+  background-size: cover; 
+  background-position: center; 
+  overflow: auto;
+}
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+/* #endregion */
+
+/* #region Header Styles */
+header {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 60%), url('https://i.ytimg.com/vi/QjMJsQx_O7o/maxresdefault.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 150px; /* Moved padding from HTML */
+}
+
+header h1 {
+  font-size: 80px;
+  font-weight: bolder; /* Make the title bold */
+  letter-spacing: -2px; /* Adjust letter spacing closer */
+  width: auto; /* Allow the title to be wider */
+  text-align: center; /* Align the title to the left */
+  color: white; /* Change text color to white */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+}
+
+header p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-align: center; /* Align the paragraph to the center */
+  color: white; /* Change text color to white */
+}
+
+/* Add this new class for header description */
+.header-description {
+  text-align: center; /* Ensure the header description is centered */
+  margin: 0 auto; /* Center the paragraph */
+  max-width: 1000px; /* Set a maximum width for the paragraph */
+  text-align: center; /* Justify the text */
+}
+/* #endregion */
+
+/* #region Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+/* #endregion */

@@ -80,9 +80,15 @@ header p {
     font-size: 18px; /* Decrease font size for the paragraph */
     margin-bottom: 20px; /* Reduce margin for the paragraph */
   }
+}
 
-  .header-description {
-    max-width: 90%; /* Allow more width on smaller screens */
+@media (max-width: 520px) { /* Adjust styles for very small devices */
+  header h1 {
+    font-size: 25px; /* Further decrease font size for the title */
+  }
+
+  header p {
+    font-size: 16px; /* Further decrease font size for the paragraph */
   }
 }
 /* #endregion */

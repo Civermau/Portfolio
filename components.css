@@ -26,31 +26,6 @@
 }
 /* #endregion */
 
-/* #region Socials Styles */
-#Socials {
-  background-color: #f9f9f9;
-  padding: 10px 20px 30px;
-  text-align: center;
-}
-
-#Socials h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-#Socials img {
-  width: 300px; /* Set a fixed width to prevent overlap */
-  height: 80px; /* Set a fixed height to prevent overlap */
-  border-radius: 15px; /* Rounded edges */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#Socials img:hover {
-  transform: scale(1.1); /* Grow effect on hover */
-}
-/* #endregion */
-
 /* #region Repo Styles */
 .repo {
   display: inline-block; /* Allows the repo divs to sit next to each other */
@@ -110,8 +85,8 @@
 }
 /* #endregion */
 
-/* #region Load More button */
-.load-more {
+/* #region button Styles */
+.button {
     background-color: #007BFF; /* Bootstrap primary color */
     color: white; /* Text color */
     border: none; /* Remove default border */
@@ -120,14 +95,15 @@
     font-size: 16px; /* Font size */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    margin-top: 20px;
 }
 
-.load-more:hover {
+.button:hover {
     background-color: #0056b3; /* Darker shade on hover */
     transform: scale(1.05); /* Slight grow effect on hover */
 }
 
-.load-more:focus {
+.button:focus {
     outline: none; /* Remove outline on focus */
 }
 
@@ -169,11 +145,106 @@
 }
 /* #endregion */
 
-@keyframes fadeIn {
+/* #region Header Section Styles */
+.header-section.DivStudio{
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 60%), url('DivStudiosDev.png');
+  animation: fadeInLeft 0.5s ease-in; /* Add animation for fade-in from left */
+  background-size: cover;
+  background-position: center;
+}
+
+.header-section.Art{
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 60%), url('ArtSection.png');
+  animation: fadeInRight 0.5s ease-in; /* Add animation for fade-in from left */
+  background-size: cover;
+  background-position: center;
+}
+
+.header-section {
+  padding: 100px; /* Adjust padding as needed */
+  text-align: center; /* Center the text */
+  color: white; /* Change text color to white */
+}
+
+.header-section h2 {
+  font-size: 36px; /* Adjust font size as needed */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+/* New animation for fade-in from left */
+@keyframes fadeInLeft {
   from {
-    opacity: 0;
+      opacity: 0; /* Start fully transparent */
+      transform: translateX(-20px); /* Start from the left */
   }
   to {
-    opacity: 1;
+      opacity: 1; /* End fully opaque */
+      transform: translateX(0); /* End at original position */
   }
 }
+
+@keyframes fadeInRight {
+  from {
+      opacity: 0; /* Start fully transparent */
+      transform: translateX(20px); /* Start from the left */
+  }
+  to {
+      opacity: 1; /* End fully opaque */
+      transform: translateX(0); /* End at original position */
+  }
+}
+/* #endregion */
+
+/* #region Socials Styles */
+#Socials {
+  background-color: #f9f9f9;
+  padding: 10px 20px 30px;
+  text-align: center;
+}
+
+#Socials h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+#Socials img {
+  width: 300px; /* Set a fixed width to prevent overlap */
+  height: 80px; /* Set a fixed height to prevent overlap */
+  border-radius: 15px; /* Rounded edges */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#Socials img:hover {
+  transform: scale(1.1); /* Grow effect on hover */
+}
+/* #endregion */
+
+/* #region Art Section Styles */
+.art-section {
+    display: flex; /* Use flexbox to arrange images next to each other */
+    justify-content: center; /* Center the images */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.art-section img {
+    width: 400px; /* Set a fixed width for all images */
+    height: 250px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    margin: 0 10px; /* Add some space between images */
+}
+
+.art-section img:hover{
+  transform: scale(1.1); /* Grow effect on hover */
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 600px) {
+    .art-section img {
+        width: 100%; /* Make images full width on small screens */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px 0; /* Add vertical margin */
+    }
+}
+/* #endregion */

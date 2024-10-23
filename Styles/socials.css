@@ -1,0 +1,64 @@
+/* #region Socials Styles */
+.footer-content {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between copyright and socials */
+  align-items: center; /* Center items vertically */
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #333; /* Match footer background */
+  color: white; /* Ensure text is white */
+}
+
+.footer-content h2 {
+  font-size: 24px; /* Adjust size for the heading */
+  margin: 0; /* Remove margin */
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex; /* Align social links in a row */
+  gap: 10px; /* Space between social icons */
+}
+
+.social-links img {
+  width: 160px; /* Adjust width for social icons */
+  height: 50px; /* Adjust height for social icons */
+  border-radius: 15px; /* Rounded edges */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-links img:hover {
+  transform: scale(1.1); /* Grow effect on hover */
+}
+
+/* New media query for responsive design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .social-links {
+    margin-bottom: 10px; /* Add space between social links and copyright */
+    gap: 5px; /* Adjust gap for stacked layout */
+  }
+
+  .footer-content p {
+    order: 1; /* Place copyright below socials */
+  }
+
+  .social-links {
+    order: 0; /* Place socials above copyright */
+  }
+}
+
+/* New media query for smaller screens */
+@media (max-width: 510px) {
+  .social-links {
+    height: auto;
+    flex-direction: column; /* Stack social links in a column */
+    align-items: center; /* Center items horizontally */
+  }
+}
+/* #endregion */

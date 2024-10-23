@@ -18,6 +18,7 @@ body {
   overflow: auto;
 }
 
+
 body::-webkit-scrollbar {
   display: none; 
 }
@@ -25,14 +26,30 @@ body::-webkit-scrollbar {
 
 /* #region Header Styles */
 header {
-  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 60%), url('https://i.ytimg.com/vi/QjMJsQx_O7o/maxresdefault.jpg');
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 60%);
   background-size: cover;
   background-position: center;
   padding: 150px; /* Moved padding from HTML */
   animation: fadeIn 0.5s ease-in; /* Add animation to header */
 }
 
+header::before{
+  content: ""; /* Added content property to ensure pseudo-element is displayed */
+  position: absolute; /* Added position property to position the pseudo-element */
+  top: 0; /* Added top property to position the pseudo-element */
+  left: 0; /* Added left property to position the pseudo-element */
+  width: 100%; /* Added width property to set the width of the pseudo-element */
+  height: 100%; /* Added height property to set the height of the pseudo-element */
+  background-image: url('https://i.ytimg.com/vi/QjMJsQx_O7o/maxresdefault.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 2s ease-in, zoomIn 90s linear forwards;
+
+  z-index: -1;
+}
+
 header h1 {
+  margin: 0; /* Remove default margin to eliminate space */
   font-size: 80px;
   font-weight: bolder; /* Make the title bold */
   letter-spacing: -2px; /* Adjust letter spacing closer */
@@ -49,15 +66,14 @@ header p {
   color: white; /* Change text color to white */
 }
 
-/* Add this new class for header description */
-.header-description {
-  text-align: center; /* Ensure the header description is centered */
-  margin: 0 auto; /* Center the paragraph */
-  max-width: 1000px; /* Set a maximum width for the paragraph */
-  text-align: center; /* Justify the text */
+
+.header img {
+  max-width: 80%; /* Set the image width to 50% of the header */
+  height: 100%; /* Maintain aspect ratio */
+  display: block; /* Make the image a block element */
+  margin: 0 auto; /* Center the image */
 }
 
-/* Add this new animation for fade-in effect */
 @keyframes fadeIn {
     from {
         opacity: 0; /* Start fully transparent */
@@ -67,13 +83,45 @@ header p {
     }
 }
 
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.05);
+  }
+  20% {
+    transform: scale(1.08);
+  }
+  30% {
+    transform: scale(1.11);
+  }
+  50% {
+    transform: scale(1.14);
+  }
+  70% {
+    transform: scale(1.17);
+  }
+  100% {
+    transform: scale(1.30);
+  }
+}
+
+
+@media (max-width: 968px) { /* Adjust styles for mobile devices */
+  header h1 {
+    font-size: 50px; /* Decrease font size for the title */
+  }
+}
+
 @media (max-width: 768px) { /* Adjust styles for mobile devices */
   header {
     padding: 100px; /* Reduce padding for smaller screens */
+    font-size: 25px;
   }
 
   header h1 {
-    font-size: 40px; /* Decrease font size for the title */
+    font-size: 30px; /* Decrease font size for the title */
   }
 
   header p {
@@ -82,15 +130,6 @@ header p {
   }
 }
 
-@media (max-width: 520px) { /* Adjust styles for very small devices */
-  header h1 {
-    font-size: 25px; /* Further decrease font size for the title */
-  }
-
-  header p {
-    font-size: 16px; /* Further decrease font size for the paragraph */
-  }
-}
 /* #endregion */
 
 /* #region Footer Styles */

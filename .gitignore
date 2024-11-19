@@ -1,0 +1,43 @@
+# Node.js modules
+node_modules/
+
+# Operating system files
+.DS_Store         # macOS
+Thumbs.db         # Windows thumbnail cache
+desktop.ini       # Windows metadata
+ehthumbs.db       # Windows enhanced thumbnails
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment-specific configuration
+.env
+.env.local
+.env.*.local
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.iml              # IntelliJ project files
+
+# Compiled or processed files
+*.css.map          # Source maps for CSS
+*.js.map           # Source maps for JavaScript
+*.min.css          # Minified CSS (if generated)
+*.min.js           # Minified JavaScript (if generated)
+
+# Temporary files
+*.tmp
+*.swp             # Swap files (used by some text editors)
+*.bak             # Backup files
+
+# Build artifacts (if applicable)
+dist/
+build/
+coverage/          # Code coverage reports
+
+# Git-specific
+*.lock             # Lock files (e.g., package-lock.json or yarn.lock)

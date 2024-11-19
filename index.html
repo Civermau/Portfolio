@@ -1,68 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Civer_mau's portfolio of coding Projects">
-    <meta name="keywords" content="Civer_mau, Civermau, Programming, Epic Potato">
-    <meta name="author" content="Civer_mau">
-    <title>Civer_mau portfolio</title>
-
-    <link rel="icon" href="/Images/Logo4K.png">
-
-    <!-- Link to CSS files -->
-    <link rel="stylesheet" href="Styles/general.css">
-    <link rel="stylesheet" href="Styles/repo.css">
-    <link rel="stylesheet" href="Styles/buttons.css">
-    <link rel="stylesheet" href="Styles/loader.css">
-    <link rel="stylesheet" href="Styles/header.css">
-    <link rel="stylesheet" href="Styles/socials.css">
-    <link rel="stylesheet" href="Styles/art.css">
-    <link rel="stylesheet" href="Styles/main.css">
-</head>
-<body>
-    <header class="header">
-        <h1>This is</h1>
-        <img src="/Images/FinishedLong.png" alt="Civer_mau's Logo">
-        <p class="header-description">And this, is my portfolio page, where you can see what I had worked on or I'm still working on. Feel free to give them a check, and find my other social media too!</p>
-    </header>
-
-    <section id="Projects">
-        <h2>My Coding Projects!</h2>
-        <div id="repos"></div>
-        <button id="loadMore" class="button">Load More</button>
-        <div id="dots" class="dots"></div>
-    </section>
-
-    <section id="DevAtDivStudios" class="header-section DivStudio">
-        <h2>Dev at DivStudios!</h2>
-        <p class="header-description">Working as dev at DivStudios, developed their webpage and developing their MC launcher</p>
-        <button class="button" onclick="window.open('https://x.com/DivStudioO/', '_blank')">Check us on Twitter</button>
-    </section>
-
-    <section id="Art" class="header-section Art">
-        <h2>Sometimes I do art too!</h2>
-        <div class="art-section">
-            <a href="https://x.com/Civer_mau/status/1847896752491229200" target="_blank"><img src="/Images/CiverLogo.png" alt="Civer_mau's Logo"></a>
-            <a href="https://x.com/Civer_mau/status/1783358743930876384" target="_blank"><img src="/Images/RagnaLogo.png" alt="Ragna's Logo"></a>
-            <a href="https://x.com/Civer_mau/status/1791722808114114677" target="_blank"><img src="/Images/RandoLogo.png" alt="Rando's Logo"></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/css/bulma.min.css" />
+    <link rel="stylesheet" href="public/css/animate.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/Images/Logo4K.png" />
+    <title>Civermau</title>
+  </head>
+  <body style="background-color: #000">
+    <section
+      class="hero is-fullheight animate__animated animate__fadeIn"
+      style="
+        background-image: url('/Images/MainHero.png');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="hero-body">
+        <div
+          class="container has-text-centered animate__animated animate__fadeInUp"
+        >
+          <p class="title" style="font-size: 6rem">
+            <span class="typewriter-title"></span>
+          </p>
+          <p class="subtitle" style="font-size: 2rem">
+            And welcome to my personal page
+          </p>
+          <!-- Social Media Links -->
+          <div class="social-media-icons" style="margin-top: 20px;">
+            <a href="https://www.youtube.com/@Civer_mau" target="_blank" style="margin: 0 10px;">
+              <img src="/Images/Socials/Youtube.png" alt="YouTube" class="hoverable-image" style="height: 50px;">
+            </a>
+            <a href="https://x.com/Civer_mau" target="_blank" style="margin: 0 10px;">
+              <img src="/Images/Socials/Twitter.png" alt="Twitter" class="hoverable-image" style="height: 50px;">
+            </a>
+            <a href="https://github.com/Civermau" target="_blank" style="margin: 0 10px;">
+              <img src="/Images/Socials/Github.png" alt="GitHub" class="hoverable-image" style="height: 50px;">
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Civer_mau. All rights reserved.</p>
-            <div id="Socials">
-                <h2>My others socials!</h2>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@Civer_mau" target="_blank"><img alt="Follow me on YouTube!" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a>
-                    <a href="https://x.com/Civer_mau" target="_blank"><img alt="Follow me on Twitter!" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=x&logoColor=white"/></a>
-                    <a href="https://www.github.com/Civermau" target="_blank"><img alt="Follow me on GitHub!" src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
-                </div>
+    <!-- *Section for Coding Projects -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title has-text-centered">Check my coding projects!</h1>  
+        <div class="columns is-multiline is-centered" id="repo-cards">
+          <!-- ~Cards will be inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- *Section for DivStudio -->
+    <section
+      class="hero is-halfheight animate-on-scroll"
+      style="
+        background-image: url('/Images/DivStudioDev.png');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title" style="font-size: 4rem">Dev at DivStudio!</p>
+          <p class="subtitle" style="font-size: 1.5rem">
+            Working as dev at DivStudio, I made their website!
+          </p>
+          <a href="https://x.com/DivStudioO/" target="_blank" class="button is-info is-large hoverable-image">
+            Visit DivStudio on Twitter
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- *Section for Art -->   
+    <section
+      class="hero is-halfheight animate-on-scroll"
+      style="
+        background-image: url('/Images/ArtSection.png');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <p class="title" style="font-size: 4rem">I do art too!</p>
+          <p class="subtitle" style="font-size: 1rem; color: #929292">
+            (sometimes)
+          </p>
+          <p class="subtitle" style="font-size: 1.5rem">
+            Find this bad boys on my twitter!
+          </p>
+          <div class="columns is-centered">
+            <!-- ~Ragna Logo -->
+            <div class="column is-one-third">
+              <figure class="image">
+                <a
+                  href="https://x.com/Civer_mau/status/1783358743930876384"
+                  target="_blank"
+                >
+                  <img
+                    src="/Images/RagnaLogo.png"
+                    alt="Ragna Logo"
+                    class="hoverable-image"
+                  />
+                </a>
+              </figure>
             </div>
+            <!-- ~Rando Logo -->
+            <div class="column is-one-third">
+              <figure class="image">
+                <a
+                  href="https://x.com/Civer_mau/status/1791722808114114677"
+                  target="_blank"
+                >
+                  <img
+                    src="/Images/RandoLogo.png"
+                    alt="Rando Logo"
+                    class="hoverable-image"
+                  />
+                </a>
+              </figure>
+            </div>
+            <!-- ~Civer Logo -->
+            <div class="column is-one-third">
+              <figure class="image">
+                <a
+                  href="https://x.com/Civer_mau/status/1847896752491229200"
+                  target="_blank"
+                >
+                  <img
+                    src="/Images/CiverLogo.png"
+                    alt="Civer Logo"
+                    class="hoverable-image"
+                  />
+                </a>
+              </figure>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <!-- *Script for the page -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

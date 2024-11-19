@@ -1,89 +1,137 @@
-const reposContainer = document.getElementById('repos');
-const loadMoreButton = document.getElementById('loadMore');
-const loader = document.getElementById('dots');
-
-let currentPage = 1;
-const repoWidth = 380; // Adjust this value based on the actual width of each repo item
-const perPage = Math.floor(window.innerWidth / repoWidth); // Calculate number of repos that fit on screen horizontally
-
-// Function to fetch repositories
-async function fetchRepositories(page, perPage) {
-    const url = `https://api.github.com/users/Civermau/repos?per_page=${perPage}&page=${page}`;
+async function fetchRepos() {
     try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status} ${response.statusText}`);
+      const response = await fetch(
+        "https://api.github.com/users/Civermau/repos"
+      );
+
+      // Check if the API limit has been reached
+      const remaining = response.headers.get('X-RateLimit-Remaining');
+      const repoCardsContainer = document.getElementById("repo-cards");
+
+      if (remaining === '0') {
+        const resetTime = new Date(response.headers.get('X-RateLimit-Reset') * 1000);
+        const message = document.createElement("p");
+        message.className = "column subtitle is-full has-text-centered";
+        message.textContent = `API rate limit reached, repos will not be shown. Please try again at ${resetTime.toLocaleString()}.`;
+        repoCardsContainer.appendChild(message);
+        return;
+      }
+
+      const repos = await response.json();
+
+      for (const repo of repos) {
+        const languagesResponse = await fetch(repo.languages_url);
+        const languages = await languagesResponse.json();
+        const languagesList =
+          Object.keys(languages).join(", ") || "Languages not specified";
+
+        const card = document.createElement("div");
+        card.className = "column is-one-quarter hidden-card";
+
+        card.innerHTML = `
+          <a href="${repo.html_url}" target="_blank" class="card-link">
+            <div class="card has-text-centered">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="${repo.html_url}/raw/master/Cover.png" alt="${
+          repo.name
+        } Cover Image" />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">${repo.name}</p>
+                    <p class="subtitle is-6">${languagesList}</p>
+                  </div>
+                </div>
+                <div class="content">
+                  ${repo.description || "No description available."}
+                </div>
+                <div class="stats">
+                  ⭐ Stars: ${repo.stargazers_count} | 🍴 Forks: ${
+          repo.forks_count
         }
-        const data = await response.json();
-        return data;
+                </div>
+              </div>
+            </div>
+          </a>
+        `;
+
+        repoCardsContainer.appendChild(card);
+      }
+
+      // Set up Intersection Observer for repo cards
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.remove('hidden-card');
+              entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+              observer.unobserve(entry.target);
+            }, index * 100); // Delay of 100ms between each card
+          }
+        });
+      }, observerOptions);
+
+      const cards = repoCardsContainer.querySelectorAll('.column');
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+
     } catch (error) {
-        console.error(error);
-        alert('Failed to fetch repositories. Please try again later.');
-        return [];
+      console.error("Error fetching repos:", error);
     }
-}
+  }
 
-// Function to display repositories one by one
-async function displayRepositories(repos) {
-    const repoDivs = repos.map(repo => {
-        const repoDiv = document.createElement('div');
-        repoDiv.classList.add('repo');
+  fetchRepos();
 
-        // Wrap the entire repoDiv in an anchor tag
-        const anchor = document.createElement('a');
-        anchor.href = repo.html_url; // Set the link to the repository URL
-        anchor.target = "_blank"; // Open in a new tab
-        anchor.appendChild(repoDiv); // Append the repoDiv to the anchor
+  function typewriterEffect(element, text, speed) {
+    let index = 0;
+    const cursor = document.createElement("span");
+    cursor.className = "cursor";
+    element.appendChild(cursor);
 
-        const repoName = document.createElement('h2');
-        const nameWithoutPrefix = repo.full_name.replace(/^Civermau\//, '');
-        repoName.textContent = nameWithoutPrefix; // Use textContent for safety
+    function type() {
+      if (index < text.length) {
+        element.insertBefore(document.createTextNode(text.charAt(index)), cursor);
+        index++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
 
-        const repoImage = document.createElement('img');
-        repoImage.src = `${repo.html_url}/raw/master/Cover.png`; // Adjust the path if necessary
-        repoImage.alt = `${nameWithoutPrefix} Cover Image`;
-        repoImage.classList.add('repo-cover'); // Add a class for styling
+  document.addEventListener("DOMContentLoaded", () => {
+    const titleElement = document.querySelector(".typewriter-title");
+    const titleText = "This is Civer_mau";
+    typewriterEffect(titleElement, titleText, 100); // Adjust speed as needed
+  });
 
-        const repoDesc = document.createElement('p');
-        repoDesc.textContent = repo.description || 'No description provided.';
+  document.addEventListener('DOMContentLoaded', function () {
+    const observerOptions = {
+      root: null, // Use the viewport as the container
+      rootMargin: '0px',
+      threshold: 0.1 // Trigger when 10% of the element is visible
+    };
 
-        const repoStats = document.createElement('div'); // Change to div
-        repoStats.classList.add('repo-stats'); // Add class for styling
-        repoStats.innerHTML = `⭐ Stars: ${repo.stargazers_count} | 🍴 Forks: ${repo.forks_count}`;
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate__animated', 'animate__fadeInLeft');
+          observer.unobserve(entry.target); // Stop observing once animated
+        }
+      });
+    }, observerOptions);
 
-        repoDiv.appendChild(repoName);
-        repoDiv.appendChild(repoImage); 
-        repoDiv.appendChild(repoDesc);
-        repoDiv.appendChild(repoStats);
-
-        reposContainer.appendChild(anchor); // Append the anchor to the container
-
-        return repoDiv; // Return the created div
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+    elementsToAnimate.forEach(element => {
+      observer.observe(element);
     });
-
-    // Apply animation to each repository
-    for (const repoDiv of repoDivs) {
-        repoDiv.classList.add('animate'); // Add animation class
-        await new Promise(resolve => setTimeout(resolve, 200)); // Adjust the delay as needed
-    }
-}
-
-// Function to load repositories
-async function loadRepositories() {
-    loader.style.display = 'block';
-    loadMoreButton.disabled = true;
-
-    const repos = await fetchRepositories(currentPage, perPage);
-    displayRepositories(repos);
-
-    loader.style.display = 'none';
-    loadMoreButton.disabled = false;
-
-    currentPage++;
-}
-
-// Initial load
-loadRepositories();
-
-// Load more on button click
-loadMoreButton.addEventListener('click', loadRepositories);
+  });

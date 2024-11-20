@@ -135,3 +135,28 @@ async function fetchRepos() {
       observer.observe(element);
     });
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.remove('hidden-icon');
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            observer.unobserve(entry.target);
+          }, index * 150);
+        }
+      });
+    }, observerOptions);
+
+    const icons = document.querySelectorAll('.hoverable-image.hidden-icon');
+    icons.forEach(icon => {
+      observer.observe(icon);
+    });
+  });

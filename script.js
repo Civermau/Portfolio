@@ -150,6 +150,12 @@ async function fetchRepos() {
             entry.target.classList.remove('hidden-icon');
             entry.target.classList.add('animate__animated', 'animate__fadeInUp');
             observer.unobserve(entry.target);
+
+            // Remove animation classes after 1 second
+            setTimeout(() => {
+              entry.target.classList.remove('animate__animated', 'animate__fadeInUp');
+            }, 1000);
+
           }, index * 150);
         }
       });

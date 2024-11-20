@@ -68,12 +68,17 @@ body {
   padding-top: 20px;
 }
 
+.hidden-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .hoverable-image {
-  transition: transform 0.5s;
+  transition: transform 0.5s !important;
 }
 
 .hoverable-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) !important;
 }
 
 /* Webkit-based browsers */
@@ -93,9 +98,4 @@ body {
   scrollbar-width: none;
   scrollbar-color: transparent transparent;
   border-radius: 10px;
-}
-
-.hidden-icon {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
 }

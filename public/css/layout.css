@@ -1,0 +1,30 @@
+@media (max-width: 768px) {
+  .title {
+    font-size: 4rem !important; /* Adjust the size as needed for mobile */
+  }
+  .subtitle {
+    font-size: 1.5rem; /* Adjust the size as needed for mobile */
+  }
+}
+
+@media (max-width: 1024px) {
+  .column.is-one-quarter {
+    flex: 0 0 45%; /* Adjust the width for tablet */
+    max-width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 769px) {
+  .column.is-one-quarter {
+    flex: 0 0 100%; /* Adjust the width for tablet */
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards */
+} 

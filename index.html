@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- * Basic Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Personal presentation page and portfolio of my projects!" />
     <meta name="keywords" content="Civer_mau, coding projects, web development, GitHub, portfolio" />
     <meta name="author" content="Civer_mau" />
+
+    <!-- * Open Graph Meta Tags -->
     <meta property="og:title" content="Welcome to Civer_mau" />
     <meta property="og:description" content="Personal presentation page and portfolio of my projects!" />
     <meta property="og:url" content="https://civermau.dev" />
-    <meta property="og:image" content="https://civermau.dev/Cover.png" />   
+    <meta property="og:image" content="https://civermau.dev/Cover.png" />
     <meta property="og:site_name" content="Civer_mau" />
     <meta property="og:type" content="website" />
 
-
-
+    <!-- * Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@Civer_mau" />
     <meta name="twitter:site" content="@Civer_mau" />
@@ -23,18 +25,20 @@
     <meta name="twitter:image" content="https://civermau.dev/Cover.png" />
     <meta name="twitter:url" content="https://civermau.dev" />
 
-
-
+    <!-- * Other Links -->
     <link rel="canonical" href="https://civermau.dev" />
     <link rel="stylesheet" href="public/css/bulma.min.css" />
     <link rel="stylesheet" href="public/css/animate.min.css" />
-    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="/Images/Logo4K.png" />
     <title>Civer_mau - Personal Portfolio</title>
+    <link rel="stylesheet" href="public/css/base.css" />
+    <link rel="stylesheet" href="public/css/layout.css" />
+    <link rel="stylesheet" href="public/css/components.css" />
+    <link rel="stylesheet" href="public/css/animations.css" />
   </head>
   <body style="background-color: #000">
     <section
@@ -82,6 +86,9 @@
           <!-- ~Cards will be inserted here -->
         </div>
       </div>
+    <div class="has-text-centered" style="margin-top: 20px;">
+      <a href="/projects" class="button is-info hidden-card is-large" id="projects-button">Check all my projects!</a>
+    </div>
     </section>
 
     <!-- *Section for DivStudio -->
@@ -176,6 +183,13 @@
     </section>
 
     <!-- *Script for the page -->
-    <script src="script.js"></script>
+    <script src="public/js/fetchRepos.js"></script>
+    <script src="public/js/typewriterEffect.js"></script>
+    <script src="public/js/intersectionObserver.js"></script>
+    <script>
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
+    </script>
   </body>
 </html>

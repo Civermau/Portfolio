@@ -1,0 +1,31 @@
+:root {
+  --bulma-primary-h: 245deg;
+  --bulma-primary-l: 33%;
+  --bulma-link-h: 245deg;
+  --bulma-link-l: 54%;
+  --bulma-info-h: 183deg;
+  --bulma-info-l: 60%;
+  --bulma-danger-l: 56%;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+/* Webkit-based browsers */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #222222; /* Dark gray color */
+  border-radius: 10px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  border-radius: 10px;
+} 

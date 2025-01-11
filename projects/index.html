@@ -7,32 +7,33 @@
     <link rel="stylesheet" href="/public/css/bulma.min.css" />
     <link rel="stylesheet" href="/public/css/base.css" />
     <link rel="stylesheet" href="/public/css/animate.min.css" />
-    <!-- <script src="/public/js/projects.js"></script> -->
+    <link rel="stylesheet" href="/public/css/projects.css" />
+    <script src="/public/js/projects.js"></script>
     <link rel="icon" type="image/png" href="/Images/Logo4K.png" />
   </head>
   <body>
-    <section class="hero is-fullheight has-background-black">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <p class="title">Que mira bobo</p>
-          <p class="subtitle">This is not finished yet, go back to the main page mf</p>
+    <div id="particles-js"></div>
+    <div class="container" style="margin-top: 1vh;">
+      <div class="columns">
+        <div class="column is-3" style="background-color: #1b1b1b;">
+          <div class="repo-list-container animate__animated animate__fadeInLeft">
+            <div class="repo-list">
+              <!-- ~ Repositories will be dynamically inserted here -->
+            </div>
+          </div>
+        </div>
+        <div class="column is-9" style="background-color: #2b2b2b;">
+          <div class="repo-details-container animate__animated animate__fadeInRight">
+            <div class="repo-details">
+              <!-- ~ Details of the selected repository will be displayed here -->
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- <div class="container">
-        <div class="columns">
-            <div class="column is-3 has-background-grey-darker">
-                <div class="repo-list"> -->
-    <!-- ~ Repositories will be dynamically inserted here -->
-    <!-- </div>
-            </div>
-            <div class="column is-9 has-background-grey-dark">
-                <div class="repo-details"> -->
-    <!-- ~ Details of the selected repository will be displayed here -->
-    <!-- </div>
-            </div>
-        </div>
-    </div> -->
+    </div>
+    <button class="back-button" onclick="window.location.href='/'">Go Back to Main Page</button>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/public/js/particlesConfig.js"></script>
   </body>
 </html>

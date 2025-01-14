@@ -1,5 +1,16 @@
 .box {
-    box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.repo-list-box {
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.repo-list-box:hover {
+  transform: translateY(-5px) !important;
+  background-color: #212121;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
 }
 
 .repo-list-container {

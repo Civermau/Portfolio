@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             repos.forEach((repo, index) => {
                 const repoItem = document.createElement('div');
                 repoItem.style.backgroundColor = '#212121';
-                repoItem.className = 'box has-text-white animate__animated animate__fadeInUp';
+                repoItem.className = 'box repo-list-box has-text-white animate__animated animate__fadeInUp';
                 repoItem.style.animationDelay = `${index * 0.2}s`;
                 const topicsHTML = repo.topics.map(topic => `<span class="tag is-info">${topic}</span>`).join(' ');
                 repoItem.innerHTML = `
@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 `;
                 repoItem.addEventListener('click', () => displayRepoDetails(index));
                 repoList.appendChild(repoItem);
+
+                // Remove animation class after animation ends
+                repoItem.addEventListener('animationend', () => {
+                    repoItem.classList.remove('animate__animated', 'animate__fadeInUp');
+                });
             });
         }
 
@@ -39,14 +44,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 repoDetails.innerHTML = `
                     <div class="box has-text-white animate__animated animate__fadeInUp" style="background-color: #212121; transform: translateY(-20px);">
-                        <h2 class="title has-text-centered is-size-1">${repo.name}</h2>
-                        <p class="has-text-centered">${repo.description || "No description available."}</p>
+                        <div class="columns is-mobile">
+                            <div class="column is-9">
+                                <h2 class="title has-text-centered is-size-1">${repo.name}</h2>
+                                <p class="has-text-centered">${repo.description || "No description available."}</p>
+                            </div>
+                            <div class="column is-3 has-text-centered">
+                                <a href="${repo.html_url}" target="_blank" class="button is-link" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background-color: #2B2B2B;">Open in GitHub </a>
+                            </div>
+                        </div>
                         <div class="content">
                             <h3 class="subtitle"></h3>
                             <div style="background-color: #2b2b2b; padding: 10px; border-radius: 5px;">${readmeHTML}</div>
                         </div>
                     </div>
                 `;
+
+
             } catch (error) {
                 console.error("Error fetching README:", error);
                 repoDetails.innerHTML = `

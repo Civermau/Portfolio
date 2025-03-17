@@ -808,22 +808,24 @@
                   data-astro-cid-j7pv25f6
                 >
                   <img
+                    id="random-repo-image"
                     src="/resources/Placeholder.DYLrtADg.png"
-                    alt="Rate Limit Reached"
+                    alt="Loading..."
                     class="has-shadow"
                     data-astro-cid-j7pv25f6
                   />
                   <div class="image-overlay" data-astro-cid-j7pv25f6>
                     <div class="overlay-content" data-astro-cid-j7pv25f6>
                       <h3
+                        id="random-repo-title"
                         class="title is-4 has-text-white mb-2"
                         data-astro-cid-j7pv25f6
                       >
-                        Rate Limit Reached
+                        Loading...
                       </h3>
-                      <p class="has-text-light" data-astro-cid-j7pv25f6>
+                      <p id="random-repo-tags" class="has-text-light" data-astro-cid-j7pv25f6>
                         <span class="badge is-primary" data-astro-cid-j7pv25f6>
-                          Rate Limit Reached
+                          Loading...
                         </span>
                       </p>
                     </div>
@@ -851,17 +853,18 @@
                     </span>
                   </div>
                   <h2
+                    id="random-repo-title-main"
                     class="title is-2 has-text-white mb-4"
                     data-astro-cid-j7pv25f6
                   >
-                    Rate Limit Reached
+                    Loading...
                   </h2>
                   <p
+                    id="random-repo-description"
                     class="subtitle is-5 has-text-grey-light mb-5"
                     data-astro-cid-j7pv25f6
                   >
-                    You have reached the rate limit for the GitHub API, please
-                    try again later.
+                    Loading project data...
                   </p>
                   <a
                     href="/projects"
@@ -927,4 +930,161 @@
       });
     });
   });
+</script>
+
+<!-- Client-side script to fetch a random GitHub repository -->
+<script>
+  // Default fallback repo to show if API fails
+  const fallbackRepo = {
+    name: "Rate Limit Reached",
+    description: "You have reached the rate limit for the GitHub API, please try again later.",
+    html_url: "/projects",
+    image: "/resources/Placeholder.DYLrtADg.png",
+    languages: ["Rate Limit Reached"]
+  };
+
+  // Function to fetch a random repo from GitHub
+  async function fetchRandomRepo() {
+    try {
+      // API URL for fetching all public repos
+      const apiUrl = 'https://api.github.com/users/Civermau/repos?sort=updated&direction=desc';
+      
+      const response = await fetch(apiUrl);
+      
+      // Check if we've hit the rate limit
+      if (response.status === 403) {
+        return fallbackRepo;
+      }
+      
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status}`);
+      }
+      
+      // Get all repos
+      const repos = await response.json();
+      
+      // If no repos found, return fallback
+      if (!repos || repos.length === 0) {
+        return fallbackRepo;
+      }
+      
+      // Pick a random repo
+      const randomIndex = Math.floor(Math.random() * repos.length);
+      const randomRepo = repos[randomIndex];
+      
+      // Get languages for the repo
+      let languages = [];
+      try {
+        const langResponse = await fetch(randomRepo.languages_url);
+        if (langResponse.ok) {
+          const langData = await langResponse.json();
+          languages = Object.keys(langData);
+        }
+      } catch (error) {
+        console.error(`Error fetching languages for ${randomRepo.name}:`, error);
+      }
+      
+      // Return formatted repo data
+      return {
+        name: randomRepo.name,
+        description: randomRepo.description || 'No description available',
+        html_url: randomRepo.html_url,
+        image: `https://raw.githubusercontent.com/Civermau/${randomRepo.name}/refs/heads/master/Cover.png`,
+        languages: languages.length > 0 ? languages : randomRepo.topics || ["No languages detected"]
+      };
+    } catch (error) {
+      console.error('Error fetching random repo:', error);
+      return fallbackRepo;
+    }
+  }
+
+  // Function to update the UI with repo data
+  function updateRandomRepoUI(repoData) {
+    // Update image
+    const repoImage = document.getElementById('random-repo-image');
+    if (repoImage) {
+      repoImage.src = repoData.image;
+      repoImage.alt = repoData.name;
+      
+      // Add error handler for image loading
+      repoImage.onerror = function() {
+        this.src = '/resources/Placeholder.DYLrtADg.png';
+      };
+    }
+    
+    // Update titles
+    const titleElements = document.querySelectorAll('#random-repo-title, #random-repo-title-main');
+    titleElements.forEach(el => {
+      if (el) el.textContent = repoData.name;
+    });
+    
+    // Update description
+    const descriptionElement = document.getElementById('random-repo-description');
+    if (descriptionElement) {
+      descriptionElement.textContent = repoData.description;
+    }
+    
+    // Update tags
+    const tagsContainer = document.getElementById('random-repo-tags');
+    if (tagsContainer) {
+      tagsContainer.innerHTML = '';
+      
+      // Add language tags
+      repoData.languages.forEach(lang => {
+        const tag = document.createElement('span');
+        tag.className = 'badge is-primary';
+        tag.textContent = lang;
+        tag.style.marginRight = '0.5rem';
+        tagsContainer.appendChild(tag);
+      });
+    }
+    
+    // Update link
+    const repoLink = document.querySelector('.featured-project-content a.button');
+    if (repoLink && repoData.name !== "Rate Limit Reached") {
+      repoLink.href = repoData.html_url;
+      repoLink.innerHTML = `
+        View Project
+        <span class="icon ml-2">
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      `;
+    }
+  }
+
+  // Main function to load random repo data
+  async function loadRandomRepo() {
+    // Get random repo section
+    const randomRepoSection = document.querySelector('.featured-project-image');
+    if (!randomRepoSection) return;
+    
+    try {
+      // Fetch random repo data
+      const repoData = await fetchRandomRepo();
+      
+      // Update UI with repo data
+      updateRandomRepoUI(repoData);
+    } catch (error) {
+      console.error('Error loading random repo:', error);
+      // Update UI with fallback repo on error
+      updateRandomRepoUI(fallbackRepo);
+    }
+  }
+
+  // Set up event listeners for both initial page load and astro navigation events
+  function setupRepoEventListeners() {
+    // Initial page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadRandomRepo);
+    } else {
+      loadRandomRepo();
+    }
+    
+    // Handle Astro View Transitions
+    document.addEventListener('astro:page-load', loadRandomRepo);
+    document.addEventListener('astro:after-swap', loadRandomRepo);
+  }
+  
+  // Initialize event listeners
+  setupRepoEventListeners();
 </script>

@@ -35,12 +35,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="stylesheet" href="/styles/fonts.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
     <!-- View Transitions for page transitions -->
     <meta name="astro-view-transitions-enabled" content="true" />
     <meta name="astro-view-transitions-fallback" content="animate" />
     <script
       type="module"
-      src="/resources/ClientRouter.astro_astro_type_script_index_0_lang.BScVxmeO.js"
+      src="/resources/ClientRouter.js"
     ></script>
     <link
       rel="stylesheet"
@@ -64,7 +65,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="/resources/about-webpage.DYhGyM8S.css" />
+    <link rel="stylesheet" href="/resources/about-webpage.css" />
     <style>
       .card[data-astro-cid-rzfmso52].is-project {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -124,6 +125,43 @@
         width: 8rem;
         height: 8rem;
       }
+      .card[data-astro-cid-aid3sr62].is-project {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card[data-astro-cid-aid3sr62].is-project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px #0003;
+      }
+      .card[data-astro-cid-aid3sr62].is-project
+        .card-image[data-astro-cid-aid3sr62] {
+        overflow: hidden;
+      }
+      .card[data-astro-cid-aid3sr62].is-project
+        .card-image[data-astro-cid-aid3sr62]
+        img[data-astro-cid-aid3sr62] {
+        transition: transform 0.5s ease;
+      }
+      .card[data-astro-cid-aid3sr62].is-project:hover
+        .card-image[data-astro-cid-aid3sr62]
+        img[data-astro-cid-aid3sr62] {
+        transform: scale(1.05);
+      }
+      .card[data-astro-cid-aid3sr62].is-project
+        .tags[data-astro-cid-aid3sr62]
+        .tag[data-astro-cid-aid3sr62] {
+        background-color: #ffffff1a;
+        color: var(--color-text-muted);
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+      .card[data-astro-cid-aid3sr62].is-project
+        .card-footer[data-astro-cid-aid3sr62] {
+        background-color: transparent;
+      }
+      .card[data-astro-cid-aid3sr62].is-project
+        .card-footer-item[data-astro-cid-aid3sr62] {
+        border-color: var(--color-border);
+      }
     </style>
   </head>
   <body>
@@ -143,10 +181,14 @@
             <a class="navbar-item" href="/" data-astro-cid-5blmo7yk>
               <div class="logo-container" data-astro-cid-5blmo7yk>
                 <img
-                  src="/resources/Long_Logo.DM8fdPVY.png"
+                  src="/resources/Long_Logo.webp"
                   alt="Logo"
+                  loading="eager"
+                  data-astro-cid-5blmo7yk="true"
+                  width="120"
+                  height="40"
+                  decoding="async"
                   class="logo-image"
-                  data-astro-cid-5blmo7yk
                 />
               </div>
             </a>
@@ -172,26 +214,31 @@
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-home" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>Home</span> </a
+                <span class="nav-text" data-astro-cid-5blmo7yk>Home</span> </a
               ><a href="/projects" class="navbar-item" data-astro-cid-5blmo7yk>
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-code" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>Projects</span> </a
+                <span class="nav-text" data-astro-cid-5blmo7yk
+                  >Projects</span
+                > </a
               ><a href="/about" class="navbar-item" data-astro-cid-5blmo7yk>
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-user" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>About</span> </a
+                <span class="nav-text" data-astro-cid-5blmo7yk>About</span> </a
               ><a href="/designs" class="navbar-item" data-astro-cid-5blmo7yk>
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-palette" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>Designs</span>
+                <span class="nav-text" data-astro-cid-5blmo7yk
+                  >Designs</span
+                > </a
+              ><a href="/gaming" class="navbar-item" data-astro-cid-5blmo7yk>
+                <span class="icon" data-astro-cid-5blmo7yk>
+                  <i class="fas fa-gamepad" data-astro-cid-5blmo7yk></i>
+                </span>
+                <span class="nav-text" data-astro-cid-5blmo7yk>Gaming</span>
               </a>
             </div>
             <div
@@ -211,10 +258,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Github.D4QUBi7C.svg"
+                        src="/resources/Github.svg"
                         alt="GitHub"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span> </a
                   ><a
@@ -227,10 +278,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Twitter.DkqU0BZJ.svg"
+                        src="/resources/Twitter.svg"
                         alt="Twitter"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span> </a
                   ><a
@@ -243,10 +298,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Youtube.CA68JTB8.svg"
+                        src="/resources/Youtube.svg"
                         alt="YouTube"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span> </a
                   ><a
@@ -259,10 +318,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Twitch.D3eKqlKv.svg"
+                        src="/resources/Twitch.svg"
                         alt="Twitch"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span>
                   </a>
@@ -273,36 +336,93 @@
         </div>
       </nav>
       <script type="module">
-        document.addEventListener("DOMContentLoaded", () => {
-          const o = Array.prototype.slice.call(
-              document.querySelectorAll(".navbar-burger"),
-              0
-            ),
-            t = () => {
-              const e = document.querySelector(".navbar");
-              if (e) {
-                const n = window.scrollY <= 10;
-                e.classList.toggle("is-scrolled", !n);
-              }
-            };
-          t(),
-            window.addEventListener("scroll", t),
-            document.addEventListener("astro:page-load", () => {
-              window.removeEventListener("scroll", t),
-                t(),
-                window.addEventListener("scroll", t);
-            }),
-            o.length > 0 &&
-              o.forEach((e) => {
-                e.addEventListener("click", () => {
-                  const n = e.dataset.target,
-                    r = document.getElementById(n);
-                  r &&
-                    (e.classList.toggle("is-active"),
-                    r.classList.toggle("is-active"));
-                });
+        function o() {
+          const e = document.querySelector(".navbar-burger"),
+            n = document.querySelector("#navbarMenu");
+          e &&
+            n &&
+            (e.classList.toggle("is-active"), n.classList.toggle("is-active"));
+        }
+        function a(e) {
+          const n = document.querySelector(".navbar-burger"),
+            t = document.querySelector("#navbarMenu"),
+            r = e.target;
+          t &&
+            t.classList.contains("is-active") &&
+            n &&
+            !r.closest(".navbar-burger") &&
+            !r.closest(".navbar-menu") &&
+            (n.classList.remove("is-active"), t.classList.remove("is-active"));
+        }
+        function i() {
+          const e = document.querySelectorAll(".navbar-start .navbar-item"),
+            n = document.querySelector(".navbar-burger"),
+            t = document.querySelector("#navbarMenu");
+          n &&
+            t &&
+            e.forEach((r) => {
+              r.addEventListener("click", () => {
+                window.innerWidth < 1024 &&
+                  (n.classList.remove("is-active"),
+                  t.classList.remove("is-active"));
               });
-        });
+            });
+        }
+        function c() {
+          const e = document.querySelector(".navbar");
+          if (e) {
+            const n = window.scrollY > 10;
+            e.classList.toggle("is-scrolled", n);
+          }
+        }
+        
+        // Function to highlight active navbar item
+        function highlightActiveNavItem() {
+          const currentPath = window.location.pathname;
+          
+          // Don't highlight any item on the about-webpage page
+          if (currentPath.includes("/about-webpage")) {
+            return;
+          }
+          
+          const navItems = document.querySelectorAll(".navbar-start .navbar-item");
+          
+          // Remove active class from all items
+          navItems.forEach(item => {
+            item.classList.remove("is-active");
+          });
+          
+          // Add active class to matching item
+          navItems.forEach(item => {
+            const href = item.getAttribute("href");
+            if (href === "/" && (currentPath === "/" || currentPath === "/index.html")) {
+              item.classList.add("is-active");
+            } else if (currentPath.startsWith(href) && href !== "/") {
+              item.classList.add("is-active");
+            }
+          });
+        }
+        
+        function s() {
+          const e = document.querySelector(".navbar-burger");
+          e && e.addEventListener("click", o),
+            document.addEventListener("click", a),
+            i(),
+            c(),
+            window.addEventListener("scroll", c);
+            
+          // Call the highlight function
+          highlightActiveNavItem();
+        }
+        function u() {
+          const e = document.querySelector(".navbar-burger");
+          e && e.removeEventListener("click", o),
+            document.removeEventListener("click", a),
+            window.removeEventListener("scroll", c);
+        }
+        document.addEventListener("DOMContentLoaded", s);
+        document.addEventListener("astro:page-load", s);
+        document.addEventListener("astro:before-preparation", u);
       </script>
       <main>
         <section class="bg-mesh" data-astro-cid-aid3sr62>
@@ -317,7 +437,8 @@
                 >
                   <span class="gradient-text" data-astro-cid-aid3sr62>
                     <span
-                      class="typewriter-title"
+                      class="typewriter-title typewriter-projects-typewriter"
+                      data-typewriter-id="projects-typewriter"
                       data-astro-cid-tnzwls7f
                     ></span>
                     <script>
@@ -326,120 +447,180 @@
                         const typeSpeed = 100;
                         const deleteSpeed = 50;
                         const loop = true;
+                        const id = "projects-typewriter";
 
-                        let typewriterInstance;
-                        let animationTimeout;
-                        let transitionListener;
+                        // Store all typewriter instances in a map
+                        if (!window.typewriterInstances) {
+                          window.typewriterInstances = new Map();
+                        }
 
-                        function initTypewriter() {
-                          // Clean up any existing instances
-                          if (typewriterInstance) {
-                            typewriterInstance.stop();
-                          }
-                          if (animationTimeout) {
-                            clearTimeout(animationTimeout);
-                          }
+                        document.addEventListener(
+                          "astro:page-load",
+                          () => {
+                            initTypewriter(id);
+                          },
+                          { once: false }
+                        );
 
-                          class Typewriter {
-                            constructor(element, words, wait = 3000) {
-                              this.element = element;
-                              this.words = words;
-                              this.txt = "";
-                              this.wordIndex = 0;
-                              this.wait = parseInt(wait, 10);
-                              this.isDeleting = false;
-                              this.stopped = false;
-                              this.type();
+                        function initTypewriter(typewriterId) {
+                          // Clean up existing instance for this specific ID
+                          cleanupTypewriter(typewriterId);
+
+                          // Get the specific typewriter element by ID
+                          const typewriterElement = document.querySelector(
+                            `.typewriter-${typewriterId}`
+                          );
+                          if (!typewriterElement) return;
+
+                          // Create a new instance for this specific ID
+                          const instance = new Typewriter(
+                            typewriterElement,
+                            texts,
+                            typeSpeed,
+                            deleteSpeed,
+                            loop
+                          );
+                          window.typewriterInstances.set(
+                            typewriterId,
+                            instance
+                          );
+                        }
+
+                        function cleanupTypewriter(typewriterId) {
+                          // If no specific ID is provided, clean up all typewriters
+                          if (!typewriterId) {
+                            if (window.typewriterInstances) {
+                              window.typewriterInstances.forEach((instance) =>
+                                instance.stop()
+                              );
+                              window.typewriterInstances.clear();
                             }
+                            return;
+                          }
 
-                            type() {
-                              if (this.stopped) return;
+                          // Clean up the specific typewriter instance
+                          if (
+                            window.typewriterInstances &&
+                            window.typewriterInstances.has(typewriterId)
+                          ) {
+                            const instance =
+                              window.typewriterInstances.get(typewriterId);
+                            instance.stop();
+                            window.typewriterInstances.delete(typewriterId);
+                          }
+                        }
 
-                              const current =
-                                this.wordIndex % this.words.length;
-                              const fullTxt = this.words[current];
+                        // Clean up before page transitions
+                        document.addEventListener(
+                          "astro:before-preparation",
+                          () => {
+                            // Only clean up this specific typewriter
+                            cleanupTypewriter(id);
+                          }
+                        );
 
-                              if (this.isDeleting) {
-                                this.txt = fullTxt.substring(
-                                  0,
-                                  this.txt.length - 1
-                                );
-                              } else {
-                                this.txt = fullTxt.substring(
-                                  0,
-                                  this.txt.length + 1
-                                );
-                              }
+                        class Typewriter {
+                          constructor(
+                            element,
+                            words,
+                            typeSpeed,
+                            deleteSpeed,
+                            loop
+                          ) {
+                            this.element = element;
+                            this.words = Array.isArray(words) ? words : [words];
+                            this.typeSpeed = typeSpeed;
+                            this.deleteSpeed = deleteSpeed;
+                            this.loop = loop;
+                            this.wordIndex = 0;
+                            this.txt = "";
+                            this.isDeleting = false;
+                            this.waitTime = 3000;
+                            this.stopped = false;
+                            this.timeout = null;
 
-                              this.element.textContent = this.txt;
+                            // Start typing immediately
+                            this.type();
+                          }
 
-                              let speed = this.isDeleting
-                                ? deleteSpeed
-                                : typeSpeed;
+                          type() {
+                            if (this.stopped) return;
 
-                              if (!this.isDeleting && this.txt === fullTxt) {
-                                if (this.words.length > 1) {
-                                  speed = this.wait;
-                                  this.isDeleting = true;
-                                }
-                              } else if (this.isDeleting && this.txt === "") {
-                                this.isDeleting = false;
-                                this.wordIndex++;
-                                speed = 500;
-                              }
+                            const currentWordIndex =
+                              this.wordIndex % this.words.length;
+                            const currentWord = this.words[currentWordIndex];
 
-                              animationTimeout = setTimeout(
-                                () => this.type(),
-                                speed
+                            // Handle typing or deleting
+                            if (this.isDeleting) {
+                              this.txt = currentWord.substring(
+                                0,
+                                this.txt.length - 1
+                              );
+                            } else {
+                              this.txt = currentWord.substring(
+                                0,
+                                this.txt.length + 1
                               );
                             }
 
-                            stop() {
-                              this.stopped = true;
-                              if (animationTimeout) {
-                                clearTimeout(animationTimeout);
+                            // Update the element
+                            this.element.textContent = this.txt;
+
+                            // Calculate typing speed
+                            let typingSpeed = this.isDeleting
+                              ? this.deleteSpeed
+                              : this.typeSpeed;
+
+                            // Handle completed typing or deletion
+                            if (!this.isDeleting && this.txt === currentWord) {
+                              // If there's only one word or loop is disabled, stop here
+                              if (
+                                this.words.length === 1 ||
+                                (!this.loop &&
+                                  this.wordIndex === this.words.length - 1)
+                              ) {
+                                return; // Done typing, no deletion needed
                               }
+
+                              // Wait at the end of the word before deleting
+                              typingSpeed = this.waitTime;
+                              this.isDeleting = true;
+                            } else if (this.isDeleting && this.txt === "") {
+                              this.isDeleting = false;
+                              this.wordIndex++;
+
+                              // If we've gone through all words and loop is disabled, stop
+                              if (
+                                !this.loop &&
+                                this.wordIndex >= this.words.length
+                              ) {
+                                return;
+                              }
+
+                              // Brief pause before starting the next word
+                              typingSpeed = 500;
+                            }
+
+                            // Schedule the next update
+                            this.timeout = setTimeout(
+                              () => this.type(),
+                              typingSpeed
+                            );
+                          }
+
+                          stop() {
+                            this.stopped = true;
+                            if (this.timeout) {
+                              clearTimeout(this.timeout);
+                              this.timeout = null;
                             }
                           }
-
-                          const targetElement =
-                            document.querySelector(".typewriter-title");
-                          if (targetElement) {
-                            typewriterInstance = new Typewriter(
-                              targetElement,
-                              texts,
-                              loop ? 3000 : 0
-                            );
-                          }
                         }
 
-                        // Clean up listeners and timeouts
-                        function cleanup() {
-                          if (typewriterInstance) {
-                            typewriterInstance.stop();
-                          }
-                          if (transitionListener) {
-                            document.removeEventListener(
-                              "astro:after-swap",
-                              transitionListener
-                            );
-                          }
-                        }
-
-                        // Initialize on first load
-                        initTypewriter();
-
-                        // Set up proper cleanup and reinitialization
-                        transitionListener = initTypewriter;
-                        document.addEventListener(
-                          "astro:after-swap",
-                          transitionListener
-                        );
-                        document.addEventListener(
-                          "astro:before-preparation",
-                          cleanup
-                        );
-                        window.addEventListener("beforeunload", cleanup);
+                        // Clean up everything when page unloads
+                        window.addEventListener("beforeunload", () => {
+                          cleanupTypewriter(); // Clean up all instances
+                        });
                       })();
                     </script>
                   </span>
@@ -485,17 +666,303 @@
               <div
                 id="rate-limit-message"
                 class="notification is-danger has-text-centered"
-                style="display: none;"
+                style="display: none"
+                data-astro-cid-aid3sr62
+              ></div>
+              <div
+                id="projects-container"
+                class="columns is-multiline"
+                data-placeholder-src="/resources/Placeholder.webp"
                 data-astro-cid-aid3sr62
               >
-                <!-- Rate limit message will be populated by JS -->
-              </div>
-              <div id="projects-container" class="columns is-multiline" data-astro-cid-aid3sr62>
-                <!-- Project cards will be populated by JS -->
+                <div
+                  class="column is-4"
+                  data-aos="fade-up"
+                  data-aos-delay="0"
+                  data-astro-cid-rzfmso52
+                >
+                  <div class="card is-glass is-project" data-astro-cid-rzfmso52>
+                    <div class="card-image" data-astro-cid-rzfmso52>
+                      <figure class="image is-16by9" data-astro-cid-rzfmso52>
+                        <img
+                          src="https://raw.githubusercontent.com/Civermau/Country-Mentioned-Bot/refs/heads/master/Cover.png"
+                          alt="Country-Mentioned-Bot"
+                          loading="lazy"
+                          decoding="async"
+                          data-astro-cid-rzfmso52
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content" data-astro-cid-rzfmso52>
+                      <h3
+                        class="title is-4 has-text-white mb-3"
+                        data-astro-cid-rzfmso52
+                      >
+                        Country-Mentioned-Bot
+                      </h3>
+                      <div class="tags mb-3" data-astro-cid-rzfmso52>
+                        <span class="tag is-primary" data-astro-cid-rzfmso52
+                          >Error fetching languages</span
+                        >
+                      </div>
+                      <p
+                        class="has-text-grey-light mb-4"
+                        data-astro-cid-rzfmso52
+                      >
+                        A Discord bot that detects if a country has been
+                        mentioned in a message on a Discord server and replies
+                        with Yui (from K-On!).
+                      </p>
+                    </div>
+                    <div class="card-footer" data-astro-cid-rzfmso52>
+                      <div class="card-footer-item" data-astro-cid-rzfmso52>
+                        <div class="is-flex" data-astro-cid-rzfmso52>
+                          <div class="mr-4" data-astro-cid-rzfmso52>
+                            <span
+                              class="icon-text has-text-grey"
+                              data-astro-cid-rzfmso52
+                            >
+                              <span class="icon" data-astro-cid-rzfmso52>
+                                <i
+                                  class="fas fa-star"
+                                  data-astro-cid-rzfmso52
+                                ></i>
+                              </span>
+                              <span data-astro-cid-rzfmso52>0</span>
+                            </span>
+                          </div>
+                          <div data-astro-cid-rzfmso52>
+                            <span
+                              class="icon-text has-text-grey"
+                              data-astro-cid-rzfmso52
+                            >
+                              <span class="icon" data-astro-cid-rzfmso52>
+                                <i
+                                  class="fas fa-code-branch"
+                                  data-astro-cid-rzfmso52
+                                ></i>
+                              </span>
+                              <span data-astro-cid-rzfmso52>0</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer-item" data-astro-cid-rzfmso52>
+                        <a
+                          href="https://github.com/Civermau/Country-Mentioned-Bot"
+                          class="has-text-primary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-astro-cid-rzfmso52
+                        >
+                          <span class="icon-text" data-astro-cid-rzfmso52>
+                            <span class="icon" data-astro-cid-rzfmso52>
+                              <i
+                                class="fab fa-github"
+                                data-astro-cid-rzfmso52
+                              ></i>
+                            </span>
+                            <span data-astro-cid-rzfmso52>View</span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="column is-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-astro-cid-rzfmso52
+                >
+                  <div class="card is-glass is-project" data-astro-cid-rzfmso52>
+                    <div class="card-image" data-astro-cid-rzfmso52>
+                      <figure class="image is-16by9" data-astro-cid-rzfmso52>
+                        <img
+                          src="https://raw.githubusercontent.com/Civermau/Discord-RPC/refs/heads/master/Cover.png"
+                          alt="Discord-RPC"
+                          loading="lazy"
+                          decoding="async"
+                          data-astro-cid-rzfmso52
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content" data-astro-cid-rzfmso52>
+                      <h3
+                        class="title is-4 has-text-white mb-3"
+                        data-astro-cid-rzfmso52
+                      >
+                        Discord-RPC
+                      </h3>
+                      <div class="tags mb-3" data-astro-cid-rzfmso52>
+                        <span class="tag is-primary" data-astro-cid-rzfmso52
+                          >Error fetching languages</span
+                        >
+                      </div>
+                      <p
+                        class="has-text-grey-light mb-4"
+                        data-astro-cid-rzfmso52
+                      >
+                        Discord custom game status made with C# and winForms and
+                        Guna library for UI
+                      </p>
+                    </div>
+                    <div class="card-footer" data-astro-cid-rzfmso52>
+                      <div class="card-footer-item" data-astro-cid-rzfmso52>
+                        <div class="is-flex" data-astro-cid-rzfmso52>
+                          <div class="mr-4" data-astro-cid-rzfmso52>
+                            <span
+                              class="icon-text has-text-grey"
+                              data-astro-cid-rzfmso52
+                            >
+                              <span class="icon" data-astro-cid-rzfmso52>
+                                <i
+                                  class="fas fa-star"
+                                  data-astro-cid-rzfmso52
+                                ></i>
+                              </span>
+                              <span data-astro-cid-rzfmso52>0</span>
+                            </span>
+                          </div>
+                          <div data-astro-cid-rzfmso52>
+                            <span
+                              class="icon-text has-text-grey"
+                              data-astro-cid-rzfmso52
+                            >
+                              <span class="icon" data-astro-cid-rzfmso52>
+                                <i
+                                  class="fas fa-code-branch"
+                                  data-astro-cid-rzfmso52
+                                ></i>
+                              </span>
+                              <span data-astro-cid-rzfmso52>0</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer-item" data-astro-cid-rzfmso52>
+                        <a
+                          href="https://github.com/Civermau/Discord-RPC"
+                          class="has-text-primary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-astro-cid-rzfmso52
+                        >
+                          <span class="icon-text" data-astro-cid-rzfmso52>
+                            <span class="icon" data-astro-cid-rzfmso52>
+                              <i
+                                class="fab fa-github"
+                                data-astro-cid-rzfmso52
+                              ></i>
+                            </span>
+                            <span data-astro-cid-rzfmso52>View</span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="column is-4"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  data-astro-cid-rzfmso52
+                >
+                  <div class="card is-glass is-project" data-astro-cid-rzfmso52>
+                    <div class="card-image" data-astro-cid-rzfmso52>
+                      <figure class="image is-16by9" data-astro-cid-rzfmso52>
+                        <img
+                          src="https://raw.githubusercontent.com/Civermau/Twitch-API/refs/heads/master/Cover.png"
+                          alt="Twitch-API"
+                          loading="lazy"
+                          decoding="async"
+                          data-astro-cid-rzfmso52
+                        />
+                      </figure>
+                    </div>
+                    <div class="card-content" data-astro-cid-rzfmso52>
+                      <h3
+                        class="title is-4 has-text-white mb-3"
+                        data-astro-cid-rzfmso52
+                      >
+                        Twitch-API
+                      </h3>
+                      <div class="tags mb-3" data-astro-cid-rzfmso52>
+                        <span class="tag is-primary" data-astro-cid-rzfmso52
+                          >Error fetching languages</span
+                        >
+                      </div>
+                      <p
+                        class="has-text-grey-light mb-4"
+                        data-astro-cid-rzfmso52
+                      >
+                        Twitch pubsub reader and Channel Points Reward manager
+                        made in C# with TwitchLib
+                      </p>
+                    </div>
+                    <div class="card-footer" data-astro-cid-rzfmso52>
+                      <div class="card-footer-item" data-astro-cid-rzfmso52>
+                        <div class="is-flex" data-astro-cid-rzfmso52>
+                          <div class="mr-4" data-astro-cid-rzfmso52>
+                            <span
+                              class="icon-text has-text-grey"
+                              data-astro-cid-rzfmso52
+                            >
+                              <span class="icon" data-astro-cid-rzfmso52>
+                                <i
+                                  class="fas fa-star"
+                                  data-astro-cid-rzfmso52
+                                ></i>
+                              </span>
+                              <span data-astro-cid-rzfmso52>0</span>
+                            </span>
+                          </div>
+                          <div data-astro-cid-rzfmso52>
+                            <span
+                              class="icon-text has-text-grey"
+                              data-astro-cid-rzfmso52
+                            >
+                              <span class="icon" data-astro-cid-rzfmso52>
+                                <i
+                                  class="fas fa-code-branch"
+                                  data-astro-cid-rzfmso52
+                                ></i>
+                              </span>
+                              <span data-astro-cid-rzfmso52>0</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer-item" data-astro-cid-rzfmso52>
+                        <a
+                          href="https://github.com/Civermau/Twitch-API"
+                          class="has-text-primary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-astro-cid-rzfmso52
+                        >
+                          <span class="icon-text" data-astro-cid-rzfmso52>
+                            <span class="icon" data-astro-cid-rzfmso52>
+                              <i
+                                class="fab fa-github"
+                                data-astro-cid-rzfmso52
+                              ></i>
+                            </span>
+                            <span data-astro-cid-rzfmso52>View</span>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
         </section>
+        <script
+          type="module"
+          src="/resources/projects.js"
+        ></script>
       </main>
       <footer class="footer has-background-light py-5" data-astro-cid-sz7xmlte>
         <div class="container" data-astro-cid-sz7xmlte>
@@ -514,10 +981,14 @@
                   data-astro-cid-sz7xmlte
                 >
                   <img
-                    src="/resources/Logo4K.ya2cfP6F.png"
+                    src="/resources/Logo4K.webp"
                     alt="Logo"
                     style="width: 100%; height: 100%; object-fit: contain"
-                    data-astro-cid-sz7xmlte
+                    loading="lazy"
+                    data-astro-cid-sz7xmlte="true"
+                    width="32"
+                    height="32"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -532,353 +1003,5 @@
         </div>
       </footer>
     </div>
-
-    <!-- Client-side script to fetch GitHub data -->
-    <script>
-      // Define the fallback projects
-      const fallbackProjects = [
-        {
-          name: "Country-Mentioned-Bot",
-          description:
-            "A Discord bot that detects if a country has been mentioned in a message on a Discord server and replies with Yui (from K-On!).",
-          languages: ["C#", "Discord.Net"],
-          url: "https://github.com/Civermau/Country-Mentioned-Bot",
-          stargazers_count: 0,
-          forks_count: 0,
-        },
-        {
-          name: "Discord-RPC",
-          description:
-            "Discord custom game status made with C# and winForms and Guna library for UI",
-          languages: ["C#", "Guna", "Discord.Net"],
-          url: "https://github.com/Civermau/Discord-RPC",
-          stargazers_count: 0,
-          forks_count: 0,
-        },
-        {
-          name: "Twitch-API",
-          description:
-            "Twitch pubsub reader and Channel Points Reward manager made in C# with TwitchLib",
-          languages: ["C#", "TwitchLib"],
-          url: "https://github.com/Civermau/Twitch-API",
-          stargazers_count: 0,
-          forks_count: 0,
-        },
-      ];
-
-      // Function to fetch all repos
-      async function fetchAllRepos(fallbackProjects) {
-        // API URL for fetching all public repos of the user
-        const apiUrl = 'https://api.github.com/users/Civermau/repos?sort=updated&direction=desc';
-        
-        try {
-          const response = await fetch(apiUrl);
-          
-          // Check if we've hit the rate limit
-          if (response.status === 403) {
-            const rateLimitResponse = await fetch('https://api.github.com/rate_limit');
-            const rateLimitData = await rateLimitResponse.json();
-            
-            // Calculate when the rate limit will reset
-            const resetTime = new Date(rateLimitData.resources.core.reset * 1000);
-            const currentTime = new Date();
-            const timeDiff = resetTime - currentTime;
-            
-            // Format time difference
-            const minutes = Math.floor(timeDiff / 60000);
-            const seconds = Math.floor((timeDiff % 60000) / 1000);
-            
-            return {
-              projects: fallbackProjects,
-              rateLimitMessage: `API rate limit reached, showing only ${fallbackProjects.length} selected projects. Please try again at ${resetTime.toLocaleDateString()}, ${resetTime.toLocaleTimeString()} (in ${minutes}m ${seconds}s)`
-            };
-          }
-          
-          if (!response.ok) {
-            throw new Error(`GitHub API error: ${response.status}`);
-          }
-          
-          // Process the repos
-          const repos = await response.json();
-          const projects = await Promise.all(repos.map(async (repo) => {
-            // Get languages for the repo
-            let languages = [];
-            try {
-              const langResponse = await fetch(repo.languages_url);
-              if (langResponse.ok) {
-                const langData = await langResponse.json();
-                languages = Object.keys(langData);
-              }
-            } catch (error) {
-              console.error(`Error fetching languages for ${repo.name}:`, error);
-            }
-            
-            return {
-              name: repo.name,
-              description: repo.description || 'No description available',
-              html_url: repo.html_url,
-              languages: languages,
-              topics: repo.topics || [],
-              stargazers_count: repo.stargazers_count,
-              forks_count: repo.forks_count,
-              updated_at: repo.updated_at,
-            };
-          }));
-          
-          return {
-            projects: projects,
-            rateLimitMessage: ''
-          };
-        } catch (error) {
-          console.error('Error fetching GitHub repos:', error);
-          return {
-            projects: fallbackProjects,
-            rateLimitMessage: 'Error fetching projects from GitHub. Showing fallback projects.'
-          };
-        }
-      }
-
-      // Main function to load projects data and render to the page
-      async function loadAndRenderProjects() {
-        // Check if we're on the projects page
-        if (!document.getElementById('projects-container')) return;
-        
-        try {
-          // First, render the fallback projects while we fetch from GitHub
-          renderProjects(fallbackProjects);
-          
-          // Fetch all repos
-          const { projects, rateLimitMessage } = await fetchAllRepos(fallbackProjects);
-          
-          if (rateLimitMessage) {
-            // Display rate limit message if present
-            const messageElement = document.getElementById('rate-limit-message');
-            if (messageElement) {
-              messageElement.textContent = rateLimitMessage;
-              messageElement.style.display = 'block';
-            }
-          } else {
-            // Hide rate limit message if no error
-            const messageElement = document.getElementById('rate-limit-message');
-            if (messageElement) {
-              messageElement.style.display = 'none';
-            }
-          }
-          
-          // Render the projects from GitHub API (or fallback if API failed)
-          renderProjects(projects);
-        } catch (error) {
-          console.error('Error updating projects:', error);
-          
-          // Display error message
-          const messageElement = document.getElementById('rate-limit-message');
-          if (messageElement) {
-            messageElement.textContent = 'Error loading projects. Showing fallback projects.';
-            messageElement.style.display = 'block';
-          }
-          
-          // Render fallback projects
-          renderProjects(fallbackProjects);
-        }
-      }
-
-      // Function to render projects
-      function renderProjects(projects) {
-        const projectsContainer = document.getElementById('projects-container');
-        if (!projectsContainer) return;
-        
-        projectsContainer.innerHTML = '';
-        
-        // Add projects
-        projects.forEach((project, index) => {
-          // Create a new column for the project
-          const column = document.createElement('div');
-          column.className = 'column is-4';
-          column.setAttribute('data-aos', 'fade-up');
-          column.setAttribute('data-aos-delay', (index * 100).toString());
-          column.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Create the card div
-          const card = document.createElement('div');
-          card.className = 'card is-glass is-project';
-          card.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Create card image
-          const cardImage = document.createElement('div');
-          cardImage.className = 'card-image';
-          cardImage.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const figure = document.createElement('figure');
-          figure.className = 'image is-16by9';
-          figure.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const img = document.createElement('img');
-          img.src = `https://raw.githubusercontent.com/Civermau/${project.name}/refs/heads/master/Cover.png`;
-          img.alt = project.name;
-          img.setAttribute('data-astro-cid-rzfmso52', '');
-          img.onerror = function() {
-            this.src = '/resources/Placeholder.DYLrtADg.png'; // Fallback image path
-          };
-          
-          figure.appendChild(img);
-          cardImage.appendChild(figure);
-          
-          // Create card content
-          const cardContent = document.createElement('div');
-          cardContent.className = 'card-content';
-          cardContent.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Create project title
-          const title = document.createElement('h3');
-          title.className = 'title is-4 has-text-white mb-3';
-          title.textContent = project.name;
-          title.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Create tags container
-          const tags = document.createElement('div');
-          tags.className = 'tags mb-3';
-          tags.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Add language tags
-          const languages = project.languages || project.topics || [];
-          languages.forEach((lang, i) => {
-            const tag = document.createElement('span');
-            tag.className = 'tag is-primary';
-            tag.textContent = lang;
-            tag.setAttribute('data-astro-cid-rzfmso52', '');
-            tags.appendChild(tag);
-          });
-          
-          // Create project description
-          const description = document.createElement('p');
-          description.className = 'has-text-grey-light mb-4';
-          description.textContent = project.description || 'No description available';
-          description.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Create card footer
-          const cardFooter = document.createElement('div');
-          cardFooter.className = 'card-footer';
-          cardFooter.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Create stats
-          const statsFooterItem = document.createElement('div');
-          statsFooterItem.className = 'card-footer-item';
-          statsFooterItem.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const statsContainer = document.createElement('div');
-          statsContainer.className = 'is-flex';
-          statsContainer.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          // Stars container
-          const starsContainer = document.createElement('div');
-          starsContainer.className = 'mr-4';
-          starsContainer.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const starsIconText = document.createElement('span');
-          starsIconText.className = 'icon-text has-text-grey';
-          starsIconText.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const starsIcon = document.createElement('span');
-          starsIcon.className = 'icon';
-          starsIcon.setAttribute('data-astro-cid-rzfmso52', '');
-          starsIcon.innerHTML = '<i class="fas fa-star"></i>';
-          
-          const starsCount = document.createElement('span');
-          starsCount.textContent = project.stargazers_count || 0;
-          starsCount.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          starsIconText.appendChild(starsIcon);
-          starsIconText.appendChild(starsCount);
-          starsContainer.appendChild(starsIconText);
-          
-          // Forks container
-          const forksContainer = document.createElement('div');
-          forksContainer.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const forksIconText = document.createElement('span');
-          forksIconText.className = 'icon-text has-text-grey';
-          forksIconText.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const forksIcon = document.createElement('span');
-          forksIcon.className = 'icon';
-          forksIcon.setAttribute('data-astro-cid-rzfmso52', '');
-          forksIcon.innerHTML = '<i class="fas fa-code-branch"></i>';
-          
-          const forksCount = document.createElement('span');
-          forksCount.textContent = project.forks_count || 0;
-          forksCount.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          forksIconText.appendChild(forksIcon);
-          forksIconText.appendChild(forksCount);
-          forksContainer.appendChild(forksIconText);
-          
-          statsContainer.appendChild(starsContainer);
-          statsContainer.appendChild(forksContainer);
-          statsFooterItem.appendChild(statsContainer);
-          
-          // Link footer item
-          const linkFooterItem = document.createElement('div');
-          linkFooterItem.className = 'card-footer-item';
-          linkFooterItem.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const link = document.createElement('a');
-          link.href = project.html_url || `https://github.com/Civermau/${project.name}`;
-          link.className = 'has-text-primary';
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const linkIconText = document.createElement('span');
-          linkIconText.className = 'icon-text';
-          linkIconText.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          const linkIcon = document.createElement('span');
-          linkIcon.className = 'icon';
-          linkIcon.setAttribute('data-astro-cid-rzfmso52', '');
-          linkIcon.innerHTML = '<i class="fab fa-github"></i>';
-          
-          const linkText = document.createElement('span');
-          linkText.textContent = 'View';
-          linkText.setAttribute('data-astro-cid-rzfmso52', '');
-          
-          linkIconText.appendChild(linkIcon);
-          linkIconText.appendChild(linkText);
-          link.appendChild(linkIconText);
-          linkFooterItem.appendChild(link);
-          
-          // Assemble card
-          cardFooter.appendChild(statsFooterItem);
-          cardFooter.appendChild(linkFooterItem);
-          
-          cardContent.appendChild(title);
-          cardContent.appendChild(tags);
-          cardContent.appendChild(description);
-          
-          card.appendChild(cardImage);
-          card.appendChild(cardContent);
-          card.appendChild(cardFooter);
-          
-          column.appendChild(card);
-          projectsContainer.appendChild(column);
-        });
-      }
-
-      // Set up event listeners for both initial page load and astro navigation events
-      function setupEventListeners() {
-        // Initial page load
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', loadAndRenderProjects);
-        } else {
-          loadAndRenderProjects();
-        }
-        
-        // Handle Astro View Transitions
-        document.addEventListener('astro:page-load', loadAndRenderProjects);
-        document.addEventListener('astro:after-swap', loadAndRenderProjects);
-      }
-      
-      // Call setup function to initialize event listeners
-      setupEventListeners();
-    </script>
   </body>
 </html>

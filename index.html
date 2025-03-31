@@ -35,12 +35,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="stylesheet" href="/styles/fonts.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
     <!-- View Transitions for page transitions -->
     <meta name="astro-view-transitions-enabled" content="true" />
     <meta name="astro-view-transitions-fallback" content="animate" />
     <script
       type="module"
-      src="/resources/ClientRouter.astro_astro_type_script_index_0_lang.BScVxmeO.js"
+      src="/resources/ClientRouter.js"
     ></script>
     <link
       rel="stylesheet"
@@ -64,7 +65,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="/resources/about-webpage.DYhGyM8S.css" />
+    <link rel="stylesheet" href="/resources/about-webpage.css" />
     <style>
       .particles-container[data-astro-cid-hy2x6jy4] {
         position: absolute;
@@ -87,6 +88,20 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+      }
+      .title-text[data-astro-cid-j7pv25f6] {
+        font-size: 5rem;
+        white-space: nowrap;
+      }
+      @media screen and (max-width: 768px) {
+        .title-text[data-astro-cid-j7pv25f6] {
+          font-size: 3.5rem;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .title-text[data-astro-cid-j7pv25f6] {
+          font-size: 2.5rem;
+        }
       }
       .hero-image-overlay[data-astro-cid-j7pv25f6] {
         position: absolute;
@@ -194,6 +209,7 @@
         box-shadow: 0 10px 30px #0003;
       }
     </style>
+    <link rel="stylesheet" href="/resources/gaming.css" />
   </head>
   <body>
     <div class="site-wrapper">
@@ -212,10 +228,14 @@
             <a class="navbar-item" href="/" data-astro-cid-5blmo7yk>
               <div class="logo-container" data-astro-cid-5blmo7yk>
                 <img
-                  src="/resources/Long_Logo.DM8fdPVY.png"
+                  src="/resources/Long_Logo.webp"
                   alt="Logo"
+                  loading="eager"
+                  data-astro-cid-5blmo7yk="true"
+                  width="120"
+                  height="40"
+                  decoding="async"
                   class="logo-image"
-                  data-astro-cid-5blmo7yk
                 />
               </div>
             </a>
@@ -241,26 +261,31 @@
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-home" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>Home</span> </a
+                <span class="nav-text" data-astro-cid-5blmo7yk>Home</span> </a
               ><a href="/projects" class="navbar-item" data-astro-cid-5blmo7yk>
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-code" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>Projects</span> </a
+                <span class="nav-text" data-astro-cid-5blmo7yk
+                  >Projects</span
+                > </a
               ><a href="/about" class="navbar-item" data-astro-cid-5blmo7yk>
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-user" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>About</span> </a
+                <span class="nav-text" data-astro-cid-5blmo7yk>About</span> </a
               ><a href="/designs" class="navbar-item" data-astro-cid-5blmo7yk>
                 <span class="icon" data-astro-cid-5blmo7yk>
                   <i class="fas fa-palette" data-astro-cid-5blmo7yk></i>
                 </span>
-                &nbsp;
-                <span data-astro-cid-5blmo7yk>Designs</span>
+                <span class="nav-text" data-astro-cid-5blmo7yk
+                  >Designs</span
+                > </a
+              ><a href="/gaming" class="navbar-item" data-astro-cid-5blmo7yk>
+                <span class="icon" data-astro-cid-5blmo7yk>
+                  <i class="fas fa-gamepad" data-astro-cid-5blmo7yk></i>
+                </span>
+                <span class="nav-text" data-astro-cid-5blmo7yk>Gaming</span>
               </a>
             </div>
             <div
@@ -280,10 +305,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Github.D4QUBi7C.svg"
+                        src="/resources/Github.svg"
                         alt="GitHub"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span> </a
                   ><a
@@ -296,10 +325,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Twitter.DkqU0BZJ.svg"
+                        src="/resources/Twitter.svg"
                         alt="Twitter"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span> </a
                   ><a
@@ -312,10 +345,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Youtube.CA68JTB8.svg"
+                        src="/resources/Youtube.svg"
                         alt="YouTube"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span> </a
                   ><a
@@ -328,10 +365,14 @@
                   >
                     <span class="icon" data-astro-cid-5blmo7yk>
                       <img
-                        src="/resources/Twitch.D3eKqlKv.svg"
+                        src="/resources/Twitch.svg"
                         alt="Twitch"
+                        loading="eager"
+                        data-astro-cid-5blmo7yk="true"
+                        width="24"
+                        height="24"
+                        decoding="async"
                         class="social-icon"
-                        data-astro-cid-5blmo7yk
                       />
                     </span>
                   </a>
@@ -342,36 +383,93 @@
         </div>
       </nav>
       <script type="module">
-        document.addEventListener("DOMContentLoaded", () => {
-          const o = Array.prototype.slice.call(
-              document.querySelectorAll(".navbar-burger"),
-              0
-            ),
-            t = () => {
-              const e = document.querySelector(".navbar");
-              if (e) {
-                const n = window.scrollY <= 10;
-                e.classList.toggle("is-scrolled", !n);
-              }
-            };
-          t(),
-            window.addEventListener("scroll", t),
-            document.addEventListener("astro:page-load", () => {
-              window.removeEventListener("scroll", t),
-                t(),
-                window.addEventListener("scroll", t);
-            }),
-            o.length > 0 &&
-              o.forEach((e) => {
-                e.addEventListener("click", () => {
-                  const n = e.dataset.target,
-                    r = document.getElementById(n);
-                  r &&
-                    (e.classList.toggle("is-active"),
-                    r.classList.toggle("is-active"));
-                });
+        function o() {
+          const e = document.querySelector(".navbar-burger"),
+            n = document.querySelector("#navbarMenu");
+          e &&
+            n &&
+            (e.classList.toggle("is-active"), n.classList.toggle("is-active"));
+        }
+        function a(e) {
+          const n = document.querySelector(".navbar-burger"),
+            t = document.querySelector("#navbarMenu"),
+            r = e.target;
+          t &&
+            t.classList.contains("is-active") &&
+            n &&
+            !r.closest(".navbar-burger") &&
+            !r.closest(".navbar-menu") &&
+            (n.classList.remove("is-active"), t.classList.remove("is-active"));
+        }
+        function i() {
+          const e = document.querySelectorAll(".navbar-start .navbar-item"),
+            n = document.querySelector(".navbar-burger"),
+            t = document.querySelector("#navbarMenu");
+          n &&
+            t &&
+            e.forEach((r) => {
+              r.addEventListener("click", () => {
+                window.innerWidth < 1024 &&
+                  (n.classList.remove("is-active"),
+                  t.classList.remove("is-active"));
               });
-        });
+            });
+        }
+        function c() {
+          const e = document.querySelector(".navbar");
+          if (e) {
+            const n = window.scrollY > 10;
+            e.classList.toggle("is-scrolled", n);
+          }
+        }
+        
+        // Function to highlight active navbar item
+        function highlightActiveNavItem() {
+          const currentPath = window.location.pathname;
+          
+          // Don't highlight any item on the about-webpage page
+          if (currentPath.includes("/about-webpage")) {
+            return;
+          }
+          
+          const navItems = document.querySelectorAll(".navbar-start .navbar-item");
+          
+          // Remove active class from all items
+          navItems.forEach(item => {
+            item.classList.remove("is-active");
+          });
+          
+          // Add active class to matching item
+          navItems.forEach(item => {
+            const href = item.getAttribute("href");
+            if (href === "/" && (currentPath === "/" || currentPath === "/index.html")) {
+              item.classList.add("is-active");
+            } else if (currentPath.startsWith(href) && href !== "/") {
+              item.classList.add("is-active");
+            }
+          });
+        }
+        
+        function s() {
+          const e = document.querySelector(".navbar-burger");
+          e && e.addEventListener("click", o),
+            document.addEventListener("click", a),
+            i(),
+            c(),
+            window.addEventListener("scroll", c);
+            
+          // Call the highlight function
+          highlightActiveNavItem();
+        }
+        function u() {
+          const e = document.querySelector(".navbar-burger");
+          e && e.removeEventListener("click", o),
+            document.removeEventListener("click", a),
+            window.removeEventListener("scroll", c);
+        }
+        document.addEventListener("DOMContentLoaded", s);
+        document.addEventListener("astro:page-load", s);
+        document.addEventListener("astro:before-preparation", u);
       </script>
       <main>
         <section class="hero is-fullheight bg-mesh" data-astro-cid-j7pv25f6>
@@ -462,7 +560,7 @@
             </script>
             <div
               class="hero-image-overlay"
-              style="background-image: url('/resources/MainHero.BMohYzme.png')"
+              style="background-image: url('/resources/MainHero.webp')"
               data-astro-cid-j7pv25f6
             ></div>
           </div>
@@ -471,12 +569,12 @@
               <div class="hero-content animate-fade-in" data-astro-cid-j7pv25f6>
                 <h1 class="title is-1 mb-4" data-astro-cid-j7pv25f6>
                   <span
-                    class="gradient-text font-extrabold"
-                    style="font-size: 5rem"
+                    class="gradient-text font-extrabold title-text"
                     data-astro-cid-j7pv25f6
                   >
                     <span
-                      class="typewriter-title"
+                      class="typewriter-title typewriter-home-typewriter"
+                      data-typewriter-id="home-typewriter"
                       data-astro-cid-tnzwls7f
                     ></span>
                     <script>
@@ -485,120 +583,180 @@
                         const typeSpeed = 100;
                         const deleteSpeed = 50;
                         const loop = true;
+                        const id = "home-typewriter";
 
-                        let typewriterInstance;
-                        let animationTimeout;
-                        let transitionListener;
+                        // Store all typewriter instances in a map
+                        if (!window.typewriterInstances) {
+                          window.typewriterInstances = new Map();
+                        }
 
-                        function initTypewriter() {
-                          // Clean up any existing instances
-                          if (typewriterInstance) {
-                            typewriterInstance.stop();
-                          }
-                          if (animationTimeout) {
-                            clearTimeout(animationTimeout);
-                          }
+                        document.addEventListener(
+                          "astro:page-load",
+                          () => {
+                            initTypewriter(id);
+                          },
+                          { once: false }
+                        );
 
-                          class Typewriter {
-                            constructor(element, words, wait = 3000) {
-                              this.element = element;
-                              this.words = words;
-                              this.txt = "";
-                              this.wordIndex = 0;
-                              this.wait = parseInt(wait, 10);
-                              this.isDeleting = false;
-                              this.stopped = false;
-                              this.type();
+                        function initTypewriter(typewriterId) {
+                          // Clean up existing instance for this specific ID
+                          cleanupTypewriter(typewriterId);
+
+                          // Get the specific typewriter element by ID
+                          const typewriterElement = document.querySelector(
+                            `.typewriter-${typewriterId}`
+                          );
+                          if (!typewriterElement) return;
+
+                          // Create a new instance for this specific ID
+                          const instance = new Typewriter(
+                            typewriterElement,
+                            texts,
+                            typeSpeed,
+                            deleteSpeed,
+                            loop
+                          );
+                          window.typewriterInstances.set(
+                            typewriterId,
+                            instance
+                          );
+                        }
+
+                        function cleanupTypewriter(typewriterId) {
+                          // If no specific ID is provided, clean up all typewriters
+                          if (!typewriterId) {
+                            if (window.typewriterInstances) {
+                              window.typewriterInstances.forEach((instance) =>
+                                instance.stop()
+                              );
+                              window.typewriterInstances.clear();
                             }
+                            return;
+                          }
 
-                            type() {
-                              if (this.stopped) return;
+                          // Clean up the specific typewriter instance
+                          if (
+                            window.typewriterInstances &&
+                            window.typewriterInstances.has(typewriterId)
+                          ) {
+                            const instance =
+                              window.typewriterInstances.get(typewriterId);
+                            instance.stop();
+                            window.typewriterInstances.delete(typewriterId);
+                          }
+                        }
 
-                              const current =
-                                this.wordIndex % this.words.length;
-                              const fullTxt = this.words[current];
+                        // Clean up before page transitions
+                        document.addEventListener(
+                          "astro:before-preparation",
+                          () => {
+                            // Only clean up this specific typewriter
+                            cleanupTypewriter(id);
+                          }
+                        );
 
-                              if (this.isDeleting) {
-                                this.txt = fullTxt.substring(
-                                  0,
-                                  this.txt.length - 1
-                                );
-                              } else {
-                                this.txt = fullTxt.substring(
-                                  0,
-                                  this.txt.length + 1
-                                );
-                              }
+                        class Typewriter {
+                          constructor(
+                            element,
+                            words,
+                            typeSpeed,
+                            deleteSpeed,
+                            loop
+                          ) {
+                            this.element = element;
+                            this.words = Array.isArray(words) ? words : [words];
+                            this.typeSpeed = typeSpeed;
+                            this.deleteSpeed = deleteSpeed;
+                            this.loop = loop;
+                            this.wordIndex = 0;
+                            this.txt = "";
+                            this.isDeleting = false;
+                            this.waitTime = 3000;
+                            this.stopped = false;
+                            this.timeout = null;
 
-                              this.element.textContent = this.txt;
+                            // Start typing immediately
+                            this.type();
+                          }
 
-                              let speed = this.isDeleting
-                                ? deleteSpeed
-                                : typeSpeed;
+                          type() {
+                            if (this.stopped) return;
 
-                              if (!this.isDeleting && this.txt === fullTxt) {
-                                if (this.words.length > 1) {
-                                  speed = this.wait;
-                                  this.isDeleting = true;
-                                }
-                              } else if (this.isDeleting && this.txt === "") {
-                                this.isDeleting = false;
-                                this.wordIndex++;
-                                speed = 500;
-                              }
+                            const currentWordIndex =
+                              this.wordIndex % this.words.length;
+                            const currentWord = this.words[currentWordIndex];
 
-                              animationTimeout = setTimeout(
-                                () => this.type(),
-                                speed
+                            // Handle typing or deleting
+                            if (this.isDeleting) {
+                              this.txt = currentWord.substring(
+                                0,
+                                this.txt.length - 1
+                              );
+                            } else {
+                              this.txt = currentWord.substring(
+                                0,
+                                this.txt.length + 1
                               );
                             }
 
-                            stop() {
-                              this.stopped = true;
-                              if (animationTimeout) {
-                                clearTimeout(animationTimeout);
+                            // Update the element
+                            this.element.textContent = this.txt;
+
+                            // Calculate typing speed
+                            let typingSpeed = this.isDeleting
+                              ? this.deleteSpeed
+                              : this.typeSpeed;
+
+                            // Handle completed typing or deletion
+                            if (!this.isDeleting && this.txt === currentWord) {
+                              // If there's only one word or loop is disabled, stop here
+                              if (
+                                this.words.length === 1 ||
+                                (!this.loop &&
+                                  this.wordIndex === this.words.length - 1)
+                              ) {
+                                return; // Done typing, no deletion needed
                               }
+
+                              // Wait at the end of the word before deleting
+                              typingSpeed = this.waitTime;
+                              this.isDeleting = true;
+                            } else if (this.isDeleting && this.txt === "") {
+                              this.isDeleting = false;
+                              this.wordIndex++;
+
+                              // If we've gone through all words and loop is disabled, stop
+                              if (
+                                !this.loop &&
+                                this.wordIndex >= this.words.length
+                              ) {
+                                return;
+                              }
+
+                              // Brief pause before starting the next word
+                              typingSpeed = 500;
+                            }
+
+                            // Schedule the next update
+                            this.timeout = setTimeout(
+                              () => this.type(),
+                              typingSpeed
+                            );
+                          }
+
+                          stop() {
+                            this.stopped = true;
+                            if (this.timeout) {
+                              clearTimeout(this.timeout);
+                              this.timeout = null;
                             }
                           }
-
-                          const targetElement =
-                            document.querySelector(".typewriter-title");
-                          if (targetElement) {
-                            typewriterInstance = new Typewriter(
-                              targetElement,
-                              texts,
-                              loop ? 3000 : 0
-                            );
-                          }
                         }
 
-                        // Clean up listeners and timeouts
-                        function cleanup() {
-                          if (typewriterInstance) {
-                            typewriterInstance.stop();
-                          }
-                          if (transitionListener) {
-                            document.removeEventListener(
-                              "astro:after-swap",
-                              transitionListener
-                            );
-                          }
-                        }
-
-                        // Initialize on first load
-                        initTypewriter();
-
-                        // Set up proper cleanup and reinitialization
-                        transitionListener = initTypewriter;
-                        document.addEventListener(
-                          "astro:after-swap",
-                          transitionListener
-                        );
-                        document.addEventListener(
-                          "astro:before-preparation",
-                          cleanup
-                        );
-                        window.addEventListener("beforeunload", cleanup);
+                        // Clean up everything when page unloads
+                        window.addEventListener("beforeunload", () => {
+                          cleanupTypewriter(); // Clean up all instances
+                        });
                       })();
                     </script>
                   </span>
@@ -751,7 +909,7 @@
                     <p class="has-text-grey-light" data-astro-cid-j7pv25f6>
                       Yeah... started learning for making this portfolio, ended
                       up enjoying it a little, so, also learning to create
-                      websites. I became the very thing I swore to destroy.
+                      websites. I became the very thing I swore to destroy.s
                     </p>
                   </div>
                 </div>
@@ -809,9 +967,11 @@
                 >
                   <img
                     id="random-repo-image"
-                    src="/resources/Placeholder.DYLrtADg.png"
-                    alt="Loading..."
+                    src="/resources/Placeholder.webp"
+                    alt="Random Project"
                     class="has-shadow"
+                    loading="lazy"
+                    decoding="async"
                     data-astro-cid-j7pv25f6
                   />
                   <div class="image-overlay" data-astro-cid-j7pv25f6>
@@ -821,9 +981,13 @@
                         class="title is-4 has-text-white mb-2"
                         data-astro-cid-j7pv25f6
                       >
-                        Loading...
+                        Random Project
                       </h3>
-                      <p id="random-repo-tags" class="has-text-light" data-astro-cid-j7pv25f6>
+                      <p
+                        id="random-repo-tags"
+                        class="has-text-light"
+                        data-astro-cid-j7pv25f6
+                      >
                         <span class="badge is-primary" data-astro-cid-j7pv25f6>
                           Loading...
                         </span>
@@ -857,7 +1021,7 @@
                     class="title is-2 has-text-white mb-4"
                     data-astro-cid-j7pv25f6
                   >
-                    Loading...
+                    Random Project
                   </h2>
                   <p
                     id="random-repo-description"
@@ -881,6 +1045,18 @@
             </div>
           </div>
         </section>
+        <script type="module">
+          document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('a[href^="#"]').forEach((e) => {
+              e.addEventListener("click", (n) => {
+                n.preventDefault();
+                const o = e.getAttribute("href"),
+                  t = document.querySelector(o);
+                t && t.scrollIntoView({ behavior: "smooth" });
+              });
+            });
+          });
+        </script>
       </main>
       <footer class="footer has-background-light py-5" data-astro-cid-sz7xmlte>
         <div class="container" data-astro-cid-sz7xmlte>
@@ -899,10 +1075,14 @@
                   data-astro-cid-sz7xmlte
                 >
                   <img
-                    src="/resources/Logo4K.ya2cfP6F.png"
+                    src="/resources/Logo4K.webp"
                     alt="Logo"
                     style="width: 100%; height: 100%; object-fit: contain"
-                    data-astro-cid-sz7xmlte
+                    loading="lazy"
+                    data-astro-cid-sz7xmlte="true"
+                    width="32"
+                    height="32"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -920,171 +1100,81 @@
   </body>
 </html>
 <script type="module">
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('a[href^="#"]').forEach((t) => {
-      t.addEventListener("click", function (n) {
-        n.preventDefault();
-        const o = this.getAttribute("href"),
-          e = document.querySelector(o);
-        e && e.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  });
-</script>
-
-<!-- Client-side script to fetch a random GitHub repository -->
-<script>
-  // Default fallback repo to show if API fails
-  const fallbackRepo = {
-    name: "Rate Limit Reached",
-    description: "You have reached the rate limit for the GitHub API, please try again later.",
-    html_url: "/projects",
-    image: "/resources/Placeholder.DYLrtADg.png",
-    languages: ["Rate Limit Reached"]
+  const m = {
+    title: "Random Project",
+    description:
+      "Unable to load project data. Please check out all my projects instead!",
+    image: document.getElementById("random-repo-image")?.src || "",
+    tags: ["Error loading tags"],
+    link: "/projects",
   };
-
-  // Function to fetch a random repo from GitHub
-  async function fetchRandomRepo() {
+  async function l() {
     try {
-      // API URL for fetching all public repos
-      const apiUrl = 'https://api.github.com/users/Civermau/repos?sort=updated&direction=desc';
-      
-      const response = await fetch(apiUrl);
-      
-      // Check if we've hit the rate limit
-      if (response.status === 403) {
-        return fallbackRepo;
-      }
-      
-      if (!response.ok) {
-        throw new Error(`GitHub API error: ${response.status}`);
-      }
-      
-      // Get all repos
-      const repos = await response.json();
-      
-      // If no repos found, return fallback
-      if (!repos || repos.length === 0) {
-        return fallbackRepo;
-      }
-      
-      // Pick a random repo
-      const randomIndex = Math.floor(Math.random() * repos.length);
-      const randomRepo = repos[randomIndex];
-      
-      // Get languages for the repo
-      let languages = [];
-      try {
-        const langResponse = await fetch(randomRepo.languages_url);
-        if (langResponse.ok) {
-          const langData = await langResponse.json();
-          languages = Object.keys(langData);
+      const e = await fetch("https://api.github.com/users/Civermau/repos");
+      if (!e.ok) throw new Error(`GitHub API error: ${e.status}`);
+      const o = await e.json();
+      if (!o || o.length === 0) throw new Error("No repositories found");
+      const t = o[Math.floor(Math.random() * o.length)];
+      console.log("Selected repository:", t.name);
+      const s = await fetch(
+          `https://api.github.com/repos/Civermau/${t.name}/languages`
+        ),
+        i = s.ok ? Object.keys(await s.json()) : [],
+        n = `https://raw.githubusercontent.com/Civermau/${t.name}/master/Cover.png`;
+      console.log("Attempting to fetch image from:", n);
+      const a = await fetch(n);
+      console.log("Image response status:", a.status);
+      let r = document.getElementById("random-repo-image")?.src || "";
+      return (
+        a.ok
+          ? ((r = n), console.log("Image loaded successfully"))
+          : console.log("Failed to load image, using placeholder"),
+        {
+          title: t.name,
+          description: t.description || "No description available",
+          image: r,
+          tags: i.length > 0 ? i : ["No languages detected"],
+          link: "/projects",
         }
-      } catch (error) {
-        console.error(`Error fetching languages for ${randomRepo.name}:`, error);
-      }
-      
-      // Return formatted repo data
-      return {
-        name: randomRepo.name,
-        description: randomRepo.description || 'No description available',
-        html_url: randomRepo.html_url,
-        image: `https://raw.githubusercontent.com/Civermau/${randomRepo.name}/refs/heads/master/Cover.png`,
-        languages: languages.length > 0 ? languages : randomRepo.topics || ["No languages detected"]
-      };
-    } catch (error) {
-      console.error('Error fetching random repo:', error);
-      return fallbackRepo;
+      );
+    } catch (e) {
+      return console.error("Error fetching random repo:", e), m;
     }
   }
-
-  // Function to update the UI with repo data
-  function updateRandomRepoUI(repoData) {
-    // Update image
-    const repoImage = document.getElementById('random-repo-image');
-    if (repoImage) {
-      repoImage.src = repoData.image;
-      repoImage.alt = repoData.name;
-      
-      // Add error handler for image loading
-      repoImage.onerror = function() {
-        this.src = '/resources/Placeholder.DYLrtADg.png';
-      };
-    }
-    
-    // Update titles
-    const titleElements = document.querySelectorAll('#random-repo-title, #random-repo-title-main');
-    titleElements.forEach(el => {
-      if (el) el.textContent = repoData.name;
-    });
-    
-    // Update description
-    const descriptionElement = document.getElementById('random-repo-description');
-    if (descriptionElement) {
-      descriptionElement.textContent = repoData.description;
-    }
-    
-    // Update tags
-    const tagsContainer = document.getElementById('random-repo-tags');
-    if (tagsContainer) {
-      tagsContainer.innerHTML = '';
-      
-      // Add language tags
-      repoData.languages.forEach(lang => {
-        const tag = document.createElement('span');
-        tag.className = 'badge is-primary';
-        tag.textContent = lang;
-        tag.style.marginRight = '0.5rem';
-        tagsContainer.appendChild(tag);
-      });
-    }
-    
-    // Update link
-    const repoLink = document.querySelector('.featured-project-content a.button');
-    if (repoLink && repoData.name !== "Rate Limit Reached") {
-      repoLink.href = repoData.html_url;
-      repoLink.innerHTML = `
-        View Project
-        <span class="icon ml-2">
-          <i class="fas fa-arrow-right"></i>
-        </span>
-      `;
-    }
-  }
-
-  // Main function to load random repo data
-  async function loadRandomRepo() {
-    // Get random repo section
-    const randomRepoSection = document.querySelector('.featured-project-image');
-    if (!randomRepoSection) return;
-    
+  async function c() {
     try {
-      // Fetch random repo data
-      const repoData = await fetchRandomRepo();
-      
-      // Update UI with repo data
-      updateRandomRepoUI(repoData);
-    } catch (error) {
-      console.error('Error loading random repo:', error);
-      // Update UI with fallback repo on error
-      updateRandomRepoUI(fallbackRepo);
+      const e = await l(),
+        o = document.getElementById("random-repo-image");
+      if (o) {
+        const a = new Image();
+        (a.onload = () => {
+          o.src = e.image;
+        }),
+          (a.src = e.image);
+      }
+      const t = document.getElementById("random-repo-title");
+      t && (t.innerText = e.title);
+      const s = document.getElementById("random-repo-title-main");
+      s && (s.innerText = e.title);
+      const i = document.getElementById("random-repo-description");
+      i && (i.innerText = e.description);
+      const n = document.getElementById("random-repo-tags");
+      n &&
+        ((n.innerHTML = ""),
+        e.tags.forEach((a) => {
+          const r = document.createElement("span");
+          (r.className = "badge is-primary"),
+            (r.innerText = a),
+            n.appendChild(r);
+        }));
+    } catch (e) {
+      console.error("Error updating random repo:", e);
     }
   }
-
-  // Set up event listeners for both initial page load and astro navigation events
-  function setupRepoEventListeners() {
-    // Initial page load
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadRandomRepo);
-    } else {
-      loadRandomRepo();
-    }
-    
-    // Handle Astro View Transitions
-    document.addEventListener('astro:page-load', loadRandomRepo);
-    document.addEventListener('astro:after-swap', loadRandomRepo);
-  }
-  
-  // Initialize event listeners
-  setupRepoEventListeners();
+  document.addEventListener("DOMContentLoaded", c);
+  document.addEventListener("astro:page-load", () => {
+    (window.location.pathname === "/" ||
+      window.location.pathname === "/index.html") &&
+      c();
+  });
 </script>

@@ -596,6 +596,7 @@
                     </div>
                     <div class="column mobile-centered" data-astro-cid-7eti3dit>
                       <h2
+                        id="steam-profile-title"
                         class="title is-3 has-text-white mb-2 mobile-text-centered"
                         data-astro-cid-7eti3dit
                       >
@@ -1729,10 +1730,10 @@
     const playerData = profileData.response.players[0] || {};
     
     // Profile name and image
-    const profileNameElements = document.querySelectorAll('.card-content h2.title.is-3');
-    profileNameElements.forEach(el => {
-      el.innerHTML = `${playerData.personaname || "Civer_mau"} <span class="level-text" data-astro-cid-7eti3dit>• Level 31</span>`;
-    });
+    const profileNameElement = document.querySelector('#steam-profile-title');
+    if (profileNameElement) {
+      profileNameElement.innerHTML = `${playerData.personaname || "Civer_mau"} <span class="level-text" data-astro-cid-7eti3dit>• Level 31</span>`;
+    }
     
     const profileImgElements = document.querySelectorAll('.profile-image-container img');
     profileImgElements.forEach(el => {
@@ -1767,11 +1768,10 @@
       statusIndicator.style.backgroundColor = statusColor;
       statusIndicator.style.marginLeft = '10px';
       
-      profileNameElements.forEach(el => {
-        if (!el.querySelector('.status-indicator')) {
-          el.appendChild(statusIndicator.cloneNode(true));
-        }
-      });
+      // Append status indicator only to the specific profile name element
+      if (profileNameElement && !profileNameElement.querySelector('.status-indicator')) {
+        profileNameElement.appendChild(statusIndicator.cloneNode(true));
+      }
     }
   }
 

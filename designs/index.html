@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="stylesheet" href="/styles/fonts.css" />
     <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/styles/designs.css" />
+    <link rel="stylesheet" href="/resources/about-webpage.css" />
     <!-- View Transitions for page transitions -->
     <meta name="astro-view-transitions-enabled" content="true" />
     <meta name="astro-view-transitions-fallback" content="animate" />
@@ -47,99 +49,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      .typewriter-title[data-astro-cid-tnzwls7f]:after {
-        content: "";
-        color: gold;
-        animation: blink 1s step-end infinite;
-        border-right: 3px solid #ffd700;
-        margin-left: 2px;
-      }
-      @keyframes blink {
-        0%,
-        to {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="/resources/about-webpage.css" />
-    <style>
-      .artwork-card[data-astro-cid-ffbxljzj] {
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .artwork-card[data-astro-cid-ffbxljzj]:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px #0003;
-      }
-      .artwork-card[data-astro-cid-ffbxljzj]
-        .card-image[data-astro-cid-ffbxljzj] {
-        overflow: hidden;
-      }
-      .artwork-card[data-astro-cid-ffbxljzj]
-        .card-image[data-astro-cid-ffbxljzj]
-        img[data-astro-cid-ffbxljzj] {
-        transition: transform 0.7s ease;
-      }
-      .artwork-card[data-astro-cid-ffbxljzj]:hover
-        .card-image[data-astro-cid-ffbxljzj]
-        img[data-astro-cid-ffbxljzj] {
-        transform: scale(1.05);
-      }
-      .artwork-overlay[data-astro-cid-ffbxljzj] {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to top,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 0.7),
-          transparent
-        );
-        display: flex;
-        align-items: flex-end;
-        padding: 2rem;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-      }
-      .artwork-card[data-astro-cid-ffbxljzj]:hover
-        .artwork-overlay[data-astro-cid-ffbxljzj] {
-        opacity: 1;
-      }
-      .process-step[data-astro-cid-ffbxljzj] {
-        padding: 1.5rem;
-        background-color: #ffffff0d;
-        border-radius: 1rem;
-        border: 1px solid var(--color-border);
-        transition: all 0.3s ease;
-      }
-      .process-step[data-astro-cid-ffbxljzj]:hover {
-        border-color: #6366f14d;
-        background-color: #6366f10d;
-      }
-      .process-step-number[data-astro-cid-ffbxljzj] {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background-color: #ffffff1a;
-        border: 1px solid var(--color-border);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        color: var(--color-primary);
-        font-weight: 600;
-        font-size: 1.25rem;
-      }
-      .max-width-prose[data-astro-cid-ffbxljzj] {
-        max-width: 65ch;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
   </head>
   <body>
     <div class="site-wrapper">
@@ -312,95 +221,6 @@
           </div>
         </div>
       </nav>
-      <script type="module">
-        function o() {
-          const e = document.querySelector(".navbar-burger"),
-            n = document.querySelector("#navbarMenu");
-          e &&
-            n &&
-            (e.classList.toggle("is-active"), n.classList.toggle("is-active"));
-        }
-        function a(e) {
-          const n = document.querySelector(".navbar-burger"),
-            t = document.querySelector("#navbarMenu"),
-            r = e.target;
-          t &&
-            t.classList.contains("is-active") &&
-            n &&
-            !r.closest(".navbar-burger") &&
-            !r.closest(".navbar-menu") &&
-            (n.classList.remove("is-active"), t.classList.remove("is-active"));
-        }
-        function i() {
-          const e = document.querySelectorAll(".navbar-start .navbar-item"),
-            n = document.querySelector(".navbar-burger"),
-            t = document.querySelector("#navbarMenu");
-          n &&
-            t &&
-            e.forEach((r) => {
-              r.addEventListener("click", () => {
-                window.innerWidth < 1024 &&
-                  (n.classList.remove("is-active"),
-                  t.classList.remove("is-active"));
-              });
-            });
-        }
-        function c() {
-          const e = document.querySelector(".navbar");
-          if (e) {
-            const n = window.scrollY > 10;
-            e.classList.toggle("is-scrolled", n);
-          }
-        }
-        
-        // Function to highlight active navbar item
-        function highlightActiveNavItem() {
-          const currentPath = window.location.pathname;
-          
-          // Don't highlight any item on the about-webpage page
-          if (currentPath.includes("/about-webpage")) {
-            return;
-          }
-          
-          const navItems = document.querySelectorAll(".navbar-start .navbar-item");
-          
-          // Remove active class from all items
-          navItems.forEach(item => {
-            item.classList.remove("is-active");
-          });
-          
-          // Add active class to matching item
-          navItems.forEach(item => {
-            const href = item.getAttribute("href");
-            if (href === "/" && (currentPath === "/" || currentPath === "/index.html")) {
-              item.classList.add("is-active");
-            } else if (currentPath.startsWith(href) && href !== "/") {
-              item.classList.add("is-active");
-            }
-          });
-        }
-        
-        function s() {
-          const e = document.querySelector(".navbar-burger");
-          e && e.addEventListener("click", o),
-            document.addEventListener("click", a),
-            i(),
-            c(),
-            window.addEventListener("scroll", c);
-            
-          // Call the highlight function
-          highlightActiveNavItem();
-        }
-        function u() {
-          const e = document.querySelector(".navbar-burger");
-          e && e.removeEventListener("click", o),
-            document.removeEventListener("click", a),
-            window.removeEventListener("scroll", c);
-        }
-        document.addEventListener("DOMContentLoaded", s);
-        document.addEventListener("astro:page-load", s);
-        document.addEventListener("astro:before-preparation", u);
-      </script>
       <main>
         <section class="bg-mesh" data-astro-cid-ffbxljzj>
           <!-- Half-height Hero Section -->
@@ -1030,5 +850,6 @@
         </div>
       </footer>
     </div>
+    <script type="module" src="/scripts/designs.js" defer></script>
   </body>
 </html>

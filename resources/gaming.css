@@ -305,3 +305,72 @@
     transform: translate(-50%) translateY(0);
   }
 }
+
+/* Typewriter Animation */
+.typewriter-title[data-astro-cid-tnzwls7f]:after {
+  content: "";
+  color: gold;
+  animation: blink 1s step-end infinite;
+  border-right: 3px solid #ffd700;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Special styles for fully completed games */
+.game-card[data-astro-cid-7eti3dit] .progress.is-primary[value="100"] {
+  background-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.game-card[data-astro-cid-7eti3dit] .progress.is-primary[value="100"]::-webkit-progress-bar {
+  background-color: #ffd700;
+}
+
+.game-card[data-astro-cid-7eti3dit] .progress.is-primary[value="100"]::-webkit-progress-value {
+  background-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.game-card[data-astro-cid-7eti3dit] .progress.is-primary[value="100"]::-moz-progress-bar {
+  background-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Add a special border glow for completed games */
+.game-card[data-astro-cid-7eti3dit]:has(.progress.is-primary[value="100"]) {
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Add a completion badge */
+.game-card[data-astro-cid-7eti3dit]:has(.progress.is-primary[value="100"]) .achievement-text::before {
+  content: "🏆";
+  margin-right: 4px;
+  font-size: 0.9em;
+}
+
+/* Add a subtle animation for completed games */
+@keyframes completedPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+}
+
+.game-card[data-astro-cid-7eti3dit]:has(.progress.is-primary[value="100"]) {
+  animation: completedPulse 3s infinite;
+}
